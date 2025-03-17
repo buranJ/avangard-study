@@ -1,0 +1,9 @@
+.news-page {
+  &__title {
+    @apply mt-[52px] text-2xl font-bold mb-7 text-center md:text-3xl md:mt-14 lg:text-4xl lg:mt-16 xl:text-[50px] xl:mt-[70px];
+  }
+  &__content {
+    @apply flex flex-wrap justify-between gap-4 mt-7 md:mt-10 md:gap-5 lg:mt-14 lg:gap-10;
+  }
+}
+

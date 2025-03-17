@@ -1,0 +1,9 @@
+.yarl__container {
+  background-color: #fff !important;
+
+  .yarl__fullsize.yarl__flex_center.yarl__slide_wrapper img{
+    max-height: 100% !important;
+    max-width: 100% !important;
+    flex: 1;
+  }
+}

@@ -1,0 +1,6 @@
+@use './variables.scss';
+@use './global.scss';
+@forward './functions.scss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

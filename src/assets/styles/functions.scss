@@ -1,0 +1,10 @@
+@use 'sass:math';
+
+@function vw($value) {
+  @return math.div($value, 1280) * 100vw;
+}
+
+@function vmin($value) {
+  @return math.div($value, 430) * 100vmin;
+}
+

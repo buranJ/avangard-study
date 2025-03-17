@@ -1,0 +1,16 @@
+.container {
+  @apply px-[30px] md:px-7 lg:px-[76px] box-border mx-auto;
+}
+
+body {
+  @apply bg-bg;
+  -webkit-font-smoothing: antialiased;
+}
+
+section {
+  @apply pt-20 -mt-20 mb-[90px];
+}
+
+html {
+  scrollbar-gutter: stable;
+}

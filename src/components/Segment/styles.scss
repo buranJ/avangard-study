@@ -1,0 +1,22 @@
+.segment {
+  @apply overflow-hidden relative flex border border-dark-blue rounded-full;
+
+  &__wrapper {
+    @apply flex w-full overflow-auto;
+  }
+
+  &__button {
+    @apply rounded-[31px] relative whitespace-nowrap px-4 py-2 text-xl font-medium text-center transition-all duration-300;
+    &.active {
+      @apply bg-dark-blue text-white;
+    }
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: 'none';
+    scrollbar-width: 'none';
+    ::-webkit-scrollbar {
+      display: 'none';
+    }
+  }
+}
+
