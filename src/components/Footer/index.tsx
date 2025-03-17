@@ -10,6 +10,7 @@ import logoRed from 'assets/images/logo-red.svg';
 
 import './styles.scss';
 
+
 type FooterLink = {
   label: string;
   href?: string;
@@ -62,13 +63,83 @@ const footerData: FooterSection[] = [
     ]
   }
 ];
-
 const Footer: React.FC = () => {
 
   return (
-    <>
-    </>
+    <footer className="footer">
+      <div className="container">
+        <div className="footer__content">
+          <div className="footer__image w-[50%]">
+            <div className="footer__image-cards">
+              <img src={logoBlue} alt="logo" className='w-[169px] h-[53px]' />
+              <p className="footer__description w-[207px] h-[46px]">
+                Строительная компания
+                “Авангард Стиль”
+              </p>
+            </div>
+            <div className="footer__image-cards">
+              <img src={logoGray} alt="logo" className='w-[169px] h-[53px]' />
+              <p className="footer__description w-[207px] h-[46px]">
+                Бизнес Центр
+                “Авангард Бизнес Центр”
+              </p>
+            </div>
+            <div className="footer__image-cards">
+              <img src={logoRed} alt="logo" className='w-[169px] h-[53px]' />
+              <p className="footer__description w-[207px] h-[46px]">
+                Спортивны клуб
+                “Авангард Спортивный клуб”
+              </p>
+            </div>
+          </div>
+          <ul className="footer__list w-[50%] ">
+            {footerData.filter((section) => {
+              return section.title !== 'Адрес';
+            }).map((section)=> (
+              <li key={section.title}>
+                <h2 className="footer__title">{section.title}</h2>
+                <ul>
+                  {section.links.map((link) => (
+                    <li key={link.label}>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+          <ul className="footer__adress w-full">
+          {footerData.filter((section)=> {
+            return section.title === 'Адрес'
+          }).map((section) => (
+            <li key={section.title}>
+              <h2 className="footer__title">{section.title}</h2>
+              <ul>
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href}>{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+          </ul>
+        </div>
+      </div>
+    </footer>
   );
 };
 
 export default Footer;
+// {footerData.map((section) => (
+//   <li key={section.title}>
+//     <h3 className="footer__title">{section.title}</h3>
+//     <ul>
+//       {section.links.map((link) => (
+//         <li key={link.label}>
+//           <a href={link.href}>{link.label}</a>
+//         </li>
+//       ))}
+//     </ul>
+//   </li>
+// ))}

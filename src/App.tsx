@@ -43,7 +43,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <AppWithLoading />
-      <WhatsAppWidget phoneNumber='+996997007007' message='Здравствуйте!' />
+      <WhatsAppWidget phoneNumber='+996997007007' message='Здравствуйте!' /> 
     </BrowserRouter>
   );
 }
