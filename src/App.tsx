@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 
+import Test from './users/Test';
+
 import Footer from 'components/Footer';
 import LoadingOverlay from 'components/LoadingOverlay';
 import ScrollToTop from 'components/ScrollToTop';
@@ -42,6 +44,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Test />
       <AppWithLoading />
       <WhatsAppWidget phoneNumber='+996997007007' message='Здравствуйте!' /> 
     </BrowserRouter>

@@ -1,0 +1,60 @@
+input{
+    min-width: 322px;
+    border-radius: 30px;
+    height: 45px;
+  
+}
+.consulation__form-submit{
+    width: 322px;
+    height: 45px;
+    border-radius: 30px;
+}
+.consulation__form__select-title{
+    width: 322px;
+    height: 45px;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 10px;
+  
+
+    
+}
+.consultation__form-item {
+    width: 322px;
+    border-radius: 30px;
+    height: 45px;
+
+  
+}
+.consultation__form-item span {
+    display: flex;
+    align-items: center;
+}
+.consulation__form-dropdown{
+    border-radius: 0 0 25px 25px;
+}
+
+
+
+@media(min-width:768px){
+    input{
+        width: 504px;
+        height: 55px;
+    }
+    .consulation__form-submit{
+        width: 504px;
+        height: 55px;
+    }
+    .consulation__form__select-title{
+        width: 504px;
+        height: 55px;
+        padding-right: 17px;
+    }
+    .consultation__form-item {
+        width: 504px;
+        height: 55px;
+    }
+    
+    
+  
+}
