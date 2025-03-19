@@ -19,6 +19,7 @@
     &__content {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     &__adress {
@@ -26,13 +27,18 @@
     }
 
     &__title {
-        font-family: var(--font-family);
         font-weight: 500;
         font-size: 19px;
         line-height: 110%;
-        text-align: center;
         color: #00091b;
+        @apply md:text-[30px];
     }
 
+    li {
+        @apply mt-[10px];
+    }
 
+    a {
+        @apply text-[15px] font-sans font-medium text-[#00091B];
+    }
 }

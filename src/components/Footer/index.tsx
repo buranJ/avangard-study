@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { usePostMailingMutation } from 'api/about/about.api';
-import { useGetContactQuery } from 'api/contact/contact.api';
-
+// import { Link } from 'react-router-dom';
+// import { usePostMailingMutation } from 'api/about/about.api';
+// import { useGetContactQuery } from 'api/contact/contact.api';
 import logoBlue from 'assets/images/logo-blue.svg';
 import logoGray from 'assets/images/logo-gray.svg';
 import logoRed from 'assets/images/logo-red.svg';
@@ -68,8 +67,8 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer__content">
-          <div className="footer__image w-[50%]">
+        <div className="footer__content mt-[50px] ">
+          <div className="footer__image w-[50%] md:w-[24%] flex flex-col gap-10">
             <div className="footer__image-cards">
               <img src={logoBlue} alt="logo" className='w-[169px] h-[53px]' />
               <p className="footer__description w-[207px] h-[46px]">
@@ -92,10 +91,10 @@ const Footer: React.FC = () => {
               </p>
             </div>
           </div>
-          <ul className="footer__list w-[50%] ">
+          <ul className="footer__list w-[50%] md:w-[44%] md:justify-around md:text-left">
             {footerData.filter((section) => {
               return section.title !== 'Адрес';
-            }).map((section)=> (
+            }).map((section) => (
               <li key={section.title}>
                 <h2 className="footer__title">{section.title}</h2>
                 <ul>
@@ -108,21 +107,21 @@ const Footer: React.FC = () => {
               </li>
             ))}
           </ul>
-          <ul className="footer__adress w-full">
-          {footerData.filter((section)=> {
-            return section.title === 'Адрес'
-          }).map((section) => (
-            <li key={section.title}>
-              <h2 className="footer__title">{section.title}</h2>
-              <ul>
-                {section.links.map((link) => (
-                  <li key={link.label}>
-                    <a href={link.href}>{link.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
+          <ul className="footer__adress w-full md:w-[30%] md:text-left">
+            {footerData.filter((section) => {
+              return section.title === 'Адрес'
+            }).map((section) => (
+              <li key={section.title}>
+                <h2 className="footer__title">{section.title}</h2>
+                <ul>
+                  {section.links.map((link) => (
+                    <li key={link.label}>
+                      <a href={link.href}>{link.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -131,15 +130,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-// {footerData.map((section) => (
-//   <li key={section.title}>
-//     <h3 className="footer__title">{section.title}</h3>
-//     <ul>
-//       {section.links.map((link) => (
-//         <li key={link.label}>
-//           <a href={link.href}>{link.label}</a>
-//         </li>
-//       ))}
-//     </ul>
-//   </li>
-// ))}
+
