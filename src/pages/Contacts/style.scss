@@ -1,0 +1,23 @@
+.store{
+    &__title{
+       @apply text-[19px];
+
+       @media (min-width: 768px) {
+        @apply text-[30px]; 
+    }
+    }
+    &__time{
+        @apply text-[15px];
+
+        @media(min-width:768px){
+            @apply text-[20px]
+        }
+    }
+}
+.contacts__banking-details p{
+    @apply text-[15px];
+
+    @media(min-width: 768px){
+        @apply text-[20px];
+    }
+}
