@@ -15,6 +15,7 @@ import TechnicalBase from 'pages/TechnicalBase';
 import { TenderDetail, TenderPage } from 'pages/Tender';
 import Tour3D from 'pages/Tour3D';
 import Vacancies from 'pages/Vacancies';
+import Panarama from 'components/ObjectDetail/Panarama';
 
 import DefaultLayout from '../layouts/DefaultLayout';
 import ObjectDetailLayout from '../layouts/ObjectDetailLayout';
@@ -38,10 +39,13 @@ const AppRoutes = () => {
         <Route path='/construction-progress' element={<ConstructionProgress />} />
         <Route path='/news-detail/:slug' element={<NewsDetail />} />
         <Route path='/3d-tour/:slug' element={<Tour3D />} />
+        {/* <Route path="object-detail" element={<ObjectDetail />} /> */}
+        <Route path='panarama' element={<Panarama />} />
       </Route>
       <Route element={<ObjectDetailLayout />}>
         <Route path='/object-detail/:slug' element={<ObjectDetail />} />
       </Route>
+
     </Routes>
   );
 };
