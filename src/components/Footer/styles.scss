@@ -1,4 +1,7 @@
 .footer {
+    &__content {
+        display: flex;
+    }
     li {
         font-family: var(--font-family);
         font-weight: 400;
@@ -19,7 +22,7 @@
     &__content {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     &__adress {
@@ -40,5 +43,54 @@
 
     a {
         @apply text-[15px] font-sans font-medium text-[#00091B];
+    }
+
+    &__subscribe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        
+    }
+
+    &__form {
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        padding-top: 30px;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 12px 50px 12px 20px;
+        background: #00091B;
+        color: #fff;
+        border: none;
+        border-radius: 999px;
+        outline: none;
+        font-size: 16px;
+
+        &::placeholder {
+            color: #ffffff;
+            opacity: 0.8;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        right: 15px;
+        top: 70%;
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
+        color: #ffffff;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    &__text {
+        font-size: 14px;
+        color: #000;
+        
     }
 }
