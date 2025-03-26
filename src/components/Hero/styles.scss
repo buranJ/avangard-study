@@ -1,0 +1,23 @@
+.objectHero {
+    background-image: url('../../assets/images/poster.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @apply w-full;
+}
+
+.objectHero__content {
+    @apply flex flex-col items-center xl:items-start;
+}
+
+.objectHero__subtitle {
+    @apply pt-[58px] font-medium text-[19px] text-center text-[#fff] font-sans xl:pt-[354px] xl:text-[30px];
+}
+
+.objectHero__title {
+    @apply font-normal text-[65px] text-center text-[#fff] uppercase font-vetren xl:text-[160px];
+}
+
+.objectHero__btns {
+    @apply mt-2 pb-[485px] flex flex-col justify-center items-center gap-[10px] xl:pb-[90px] xl:flex-row xl:gap-[30px];
+}
