@@ -7,6 +7,7 @@ import AboutObject from './AboutObject'
 import BeforeAfter from './BeforeAfter'
 import Location from './Location'
 import MasterPlan from './MasterPlan'
+import MapImages from './MapImages'
 
 function Panarama() {
     return (
@@ -15,8 +16,10 @@ function Panarama() {
             <AboutObject />
             <BeforeAfter />
             <MasterPlan />
+            <Gallery />
             <Location />
-            <Gallery/>
+            <MapImages />
+
         </>
     )
 }
