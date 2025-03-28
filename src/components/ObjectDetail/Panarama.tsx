@@ -2,10 +2,11 @@ import React from 'react'
 
 import Hero from 'components/Hero'
 
+import Gallery from '../Gallery'
 import AboutObject from './AboutObject'
+import BeforeAfter from './BeforeAfter'
 import Location from './Location'
 import MasterPlan from './MasterPlan'
-import BeforeAfter from './BeforeAfter'
 
 function Panarama() {
     return (
@@ -15,6 +16,7 @@ function Panarama() {
             <BeforeAfter />
             <MasterPlan />
             <Location />
+            <Gallery/>
         </>
     )
 }
