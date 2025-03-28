@@ -1,0 +1,22 @@
+.beforeAfter__content {
+    @apply flex flex-col gap-[30px] xl:gap-[70px];
+  }
+  
+  .beforeAfter {
+    @apply my-[50px] xl:my-[90px];
+  }
+  
+  .beforeAfter__title {
+    @apply font-bold text-[24px] text-center text-[#00091b] xl:text-[50px];
+  }
+  
+  .beforeAfter__slider {
+    @apply w-[100%];
+  }
+  
+  .beforeAfter__slider-image {
+    @apply rounded-[30px] max-h-[626px] xl:rounded-[50px];
+  }
+  .beforeAfter__handle{
+    height: 100%;
+  }
