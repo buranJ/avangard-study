@@ -5,7 +5,7 @@ import Gallery from 'components/Gallery';
 
 import mapImage from '../../../assets/images/maps/map-1.png';
 import cityPanorama from '../../../assets/images/maps/map-2.png';
-
+['jsfshk','sjkhfjks']
 import './styles.scss';
 
 interface MapImages {

@@ -37,15 +37,15 @@ const Features: FC<IProps> = ({ advantages }) => {
         <div className="container">
           <div className="advantages__content flex flex-col items-center ">
             <h2 className="advantages__title flex justify-center font-[700] text-[50px] ">Преимущества</h2>
-           <ul className="grid grid-cols-4 mt-[70px] font-[700] text-[20px] ">{features.map((item) => {
-          
-           return <li className="dvantages__icon flex flex-col items-center max-w-[238px] text-center">
-                    <img src={item.icon} alt="fence" />
-                    <p className="">{item.title}</p>
-                  </li>
+            <ul className="grid grid-cols-4 mt-[70px] font-[700] text-[20px] ">{features.map((item) => {
+
+              return <li className="dvantages__icon flex flex-col items-center max-w-[238px] text-center">
+                <img src={item.icon} alt="fence" />
+                <p className="">{item.title}</p>
+              </li>
             }
             )}
-</ul>
+            </ul>
           </div>
         </div>
       </section>
