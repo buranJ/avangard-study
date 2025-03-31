@@ -6,14 +6,16 @@ import Gallery from '../Gallery'
 import AboutObject from './AboutObject'
 import BeforeAfter from './BeforeAfter'
 import Location from './Location'
-import MasterPlan from './MasterPlan'
 import MapImages from './MapImages'
+import MasterPlan from './MasterPlan'
+import ObjectMetrics from './ObjectMetrics'
 
 function Panarama() {
     return (
         <>
             <Hero />
             <AboutObject />
+            <ObjectMetrics/>
             <BeforeAfter />
             <MasterPlan />
             <Gallery />

@@ -1,23 +1,75 @@
 .objectHero {
-    background-image: url('../../assets/images/poster.webp');
+    background-image: url("../../assets/images/poster.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    @apply w-full;
-}
-
-.objectHero__content {
-    @apply flex flex-col items-center xl:items-start;
-}
-
-.objectHero__subtitle {
+    @apply w-full relative;
+  }
+  
+  .objectHero__content {
+    @apply flex flex-col items-center  xl:items-start;
+  }
+  
+  .objectHero__subtitle {
     @apply pt-[58px] font-medium text-[19px] text-center text-[#fff] font-sans xl:pt-[354px] xl:text-[30px];
-}
-
-.objectHero__title {
+  }
+  
+  .objectHero__title {
     @apply font-normal text-[65px] text-center text-[#fff] uppercase font-vetren xl:text-[160px];
-}
-
-.objectHero__btns {
+  }
+  
+  .objectHero__btns {
     @apply mt-2 pb-[485px] flex flex-col justify-center items-center gap-[10px] xl:pb-[90px] xl:flex-row xl:gap-[30px];
-}
+  }
+  
+  .objectHero__modal-out {
+    @apply fixed inset-0 z-[666] flex items-center justify-center px-7 bg-black bg-opacity-50;
+  }
+  
+  .objectHero__modal {
+    @apply relative p-6 m-[16px] w-full max-w-[64rem]  bg-white rounded-[0.5rem];
+  }
+  
+  .objectHero__modal-close {
+    @apply absolute top-4 right-4;
+  }
+  
+  .objectHero__modal-title {
+    @apply text-[#00091b] font-normal text-[18px] leading-[18px] text-center mb-[9px] tracking-[0.6px] md:text-[33px];
+  }
+  
+  .objectHero__modal-content {
+    @apply p-4;
+  }
+  
+  .objectHero__modal-description {
+    @apply text-[15px] text-[#00091b] opacity-[0.8] mb-[15px] break-words text-center md:text-[17px];
+  }
+  
+  .ObjectHero__modal-submit {
+    transition: all 0.2s ease;
+    @apply relative px-[20px] py-[15px] flex w-full rounded-[4px] min-h-[52px] justify-center bg-[#7fc5e1]  text-[15px] font-semibold text-white hover:opacity-[0.7] md:text-[22px];
+  }
+  
+  .ObjectHero__modal-field {
+    @apply w-full block;
+  }
+  
+  .ObjectHero__modal-field input {
+    border: 1px solid rgba(0, 0, 0, .1);
+    @apply h-[52px] rounded-[4px] w-full pt-[17px] pl-[10px] text-[16px] placeholder:opacity-[0.5] text-black relative block bg-gray-50   px-3 py-1.5  -outline-offset-1 outline-gray-300 placeholder:text-black  focus:outline-[#7fc5e1] sm:text-sm/6 md:text-[17px];
+  }
+  
+  .objectHero__modal-top-line {
+    background: rgba(82, 92, 105, 0.11);
+    @apply w-full h-[1px];
+  }
+  
+  .objectHero__modal-bot-line {
+    @apply w-[110%] justify-self-center h-[5px] bg-[#7fc5e1]
+  }
+  
+  .objectHero__modal-wrapper {
+    @apply min-h-[250px] max-w-[700px] mx-auto;
+  }
+  

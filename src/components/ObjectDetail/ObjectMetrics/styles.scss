@@ -1,0 +1,40 @@
+.object-metrics {
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 110%;
+        color: #00091b;
+        text-align: center;
+        margin-top: 90px;
+
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 48px;
+        margin-top: 70px;
+    }
+
+    &__columns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__value {
+        font-family: var(--font4);
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 110%;
+        color: #fff;
+    }
+
+    &__label {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 110%;
+        color: #fff;
+    }
+
+}

@@ -75,7 +75,6 @@ const AboutObject: FC<IProps> = (data) => {
             <div className="about__second flex flex-row-reverse w-[1/2] mt-10 gap-5">
               <p className="ml-3 w-[50%] text-[rgba(0,9,27,0.7)]">{mockData.description}</p>
               <div className="button relative w-[50%]">
-
                 <img className="h-[100%]" src={second} alt="photo" />
                 <button className="py-[10px] px-[15px] absolute bottom-[4%] left-[29%] mr-3 border border-white rounded-[62px] text-white text-center text-[11px] backdrop-blur-[15px] bg-[rgba(0,9,27,0.1)]">
                   {mockData.apartments}квартир
