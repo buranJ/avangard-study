@@ -11,7 +11,6 @@ import './styles.scss';
 interface MapImages {
   images: Location;
 }
-
 const MapImages: React.FC<MapImages> = ({ images }) => {
 
   return (

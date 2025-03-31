@@ -9,6 +9,7 @@ import Location from './Location'
 import MapImages from './MapImages'
 import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
+import Features from './Features'
 
 function Panarama() {
     return (
@@ -21,7 +22,7 @@ function Panarama() {
             <Gallery />
             <Location />
             <MapImages />
-
+             <Features/>
         </>
     )
 }
