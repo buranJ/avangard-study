@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-import { useGetNewsQuery } from 'api/news/news.api';
-import NewsCard from 'components/NewsCard';
+// import { useGetNewsQuery } from 'api/news/news.api';
+// import NewsCard from 'components/NewsCard';
 
+import { Link } from "react-router-dom";
 import img from "../../../assets/images/News/image1.svg"
 import img2 from "../../../assets/images/News/image2.svg"
 import img3 from "../../../assets/images/News/image3.svg"
@@ -26,22 +27,21 @@ export const mockData: IRaport[] = [
     title: "Стандарт паркинга в современном ЖК",
     date: "25.07.2024",
     image: img,
-    // description: Строительная компания «Авангард Стиль» представляет стандарт паркинга в современных жилых комплексах. Мы создаем удобные и безопасные парковочные пространства для комфортной жизни.,
   },
   {
     id: 2,
     title: "Москва Сити Июнь 2024",
     date: "25.07.2024",
     image: img2,
-    // description: Актуальный фотоотчет по строительству комплекса в Москва Сити за июнь 2024 года. Работы идут строго по графику, и мы рады делиться успехами с вами!,
   },
   {
     id: 3,
     title: "Елисейские поля Июнь 2024",
     date: "24.07.2024",
     image: img3,
-    // description: Свежий фотоотчет по строительству жилого комплекса «Елисейские поля» за июнь 2024 года. Следите за ходом работ вместе с нами!,
+
   },
+  
 ];
 const News = () => {
 
@@ -52,10 +52,10 @@ const News = () => {
           <div className="content md:max-w-[100%] " >
             <div className="flex justify-between items-center ">
               <h2 className=" text-white font-[700] text-[24px] " >Новости</h2>
-              <a href="#" className="flex items-center gap-[20px] " >
+              <Link to="/newscard" className="flex items-center gap-[20px] " >
                 <span className="text-white font-[700] text-[24px] " >Еще</span>
                 <img src={scale} alt="icon" />
-              </a>
+              </Link>
             </div>
             <div className="news__main mt-[30px] grid gap-[15px] md:justify-between pb-[50px] md:flex  md:max-w-[100%] ">
               {mockData.map((item: IRaport) => {
@@ -64,8 +64,8 @@ const News = () => {
                     <div className="image md:w-[330px] h-[120px] md:h-[240px] " >
                       <img src={item.image} alt="image" className=" w-[100%]  h-[100%]" />
                     </div>
-                    <div className="max-w-[161px] ml-[15px] md:max-w-[250px] ">
-                      <h2 className=" text-[19px] font-[500] md:text-[30px] md:mt-[10px] " >{item.title}</h2>
+                    <div className=" max-w-[161px] ml-[15px] md:text-center md:max-w-[307px] ">
+                      <h2 className=" text-[19px] font-[500]  md:text-[30px] md:mt-[10px] " >{item.title}</h2>
                       <a href="#"><p className=" md:absolute md:top-[2%] md:right-[5%]   font-[500] mt-[10px] text-[15px] px-[15px] py-[10px] bg-[#00091B] text-white rounded-[62px] max-w-[107px] flex items-center justify-center  " >{item.date}</p></a>
                     </div>
                   </div>
