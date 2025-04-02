@@ -10,19 +10,21 @@ import MapImages from './MapImages'
 import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
 import Features from './Features'
+import Architecture from './Architecture'
 
 function Panarama() {
     return (
         <>
             <Hero />
             <AboutObject />
-            <ObjectMetrics/>
+            <ObjectMetrics />
             <BeforeAfter />
+            <Architecture />
             <MasterPlan />
             <Gallery />
             <Location />
             <MapImages />
-             <Features/>
+            <Features />
         </>
     )
 }
