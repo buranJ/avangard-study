@@ -123,7 +123,7 @@ const Architecture: FC<IProps> = ({ architecture }) => {
       <div className="container">
         <div className="arch__content font-normal flex flex-col items-center gap-[30px] md:gap-[50px]">
           <h1 className="arch__title text-[24px] md:text-[50px]">Архитектура</h1>
-          <div className="arch__btns-switch  flex  text-[24px] md:text-[30px] gap-[0px]">
+          <div className="arch__btns-switch  flex  text-[24px] md:text-[30px] gap-[0px] bg-[#00417d] rounded-[31px]">
             <button onClick={() => toggleButton('facade')}
               className={`arch__btn__facade h-[50px]  md:h-[63px] rounded-[31px]  w-[140px] md:w-[210px]  text-center border-2  border-[#00417d] ${isButtonChoice === "facade" ? "bg-[#00417d] text-white" : "bg-white text-[#00417d]"}`}>Фасад</button>
             <button onClick={() => toggleButton('material')}
