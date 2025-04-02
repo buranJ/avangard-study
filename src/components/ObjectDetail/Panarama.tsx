@@ -19,7 +19,7 @@ function Panarama() {
             <AboutObject />
             <ObjectMetrics />
             <BeforeAfter />
-            <Architecture />
+            {/* <Architecture /> */}
             <MasterPlan />
             <Gallery />
             <Location />
