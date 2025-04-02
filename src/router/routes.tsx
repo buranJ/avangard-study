@@ -16,6 +16,7 @@ import { TenderDetail, TenderPage } from 'pages/Tender';
 import Tour3D from 'pages/Tour3D';
 import Vacancies from 'pages/Vacancies';
 import Panarama from 'components/ObjectDetail/Panarama';
+import NewsCard from "components/NewsCard/index.tsx"
 
 import DefaultLayout from '../layouts/DefaultLayout';
 import ObjectDetailLayout from '../layouts/ObjectDetailLayout';
@@ -29,6 +30,7 @@ const AppRoutes = () => {
         <Route path='/about' element={<About />} />
         <Route path='/contacts' element={<Contacts />} />
         <Route path='/news' element={<News />} />
+        <Route path="/newscard" element={<NewsCard />} />
         <Route path='/technical-base' element={<TechnicalBase />} />
         <Route path='/smi' element={<Smi />} />
         <Route path="/procurement" element={<TenderPage />} />

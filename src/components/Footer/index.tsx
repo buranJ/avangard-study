@@ -225,9 +225,9 @@ const Footer: React.FC = () => {
 
 
   return (
-    <footer className="footer">
+    <footer className="footer bg-white ">
       <div className="container">
-        <div className="footer__content mt-[50px] ">
+        <div className="footer__content py-[57px] ">
           <div className="footer__image w-[50%] md:w-[24%] flex flex-col gap-10">
             <div className="footer__image-cards">
               <img src={logoBlue} alt="logo" className='w-[169px] h-[53px]' />
