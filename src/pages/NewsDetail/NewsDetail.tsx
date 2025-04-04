@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import { useParams } from 'react-router-dom';
 
 import { useGetNewsDetailQuery } from 'api/news/news.api';
-import PageHeading from 'components/PageHeading';
+import PageHeading from 'components/PageHeading'; 
 
 import './styles.scss';
 

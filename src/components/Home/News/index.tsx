@@ -64,8 +64,8 @@ const News = () => {
                     <div className="image md:w-[330px] h-[120px] md:h-[240px] " >
                       <img src={item.image} alt="image" className=" w-[100%]  h-[100%]" />
                     </div>
-                    <div className=" max-w-[161px] ml-[15px] md:text-center md:max-w-[307px] ">
-                      <h2 className=" text-[19px] font-[500]  md:text-[30px] md:mt-[10px] " >{item.title}</h2>
+                    <div className="max-w-[161px] ml-[15px] md:max-w-[307px] ">
+                      <h2 className=" text-[19px] font-[500] md:text-[30px] md:mt-[10px] " >{item.title}</h2>
                       <a href="#"><p className=" md:absolute md:top-[2%] md:right-[5%]   font-[500] mt-[10px] text-[15px] px-[15px] py-[10px] bg-[#00091B] text-white rounded-[62px] max-w-[107px] flex items-center justify-center  " >{item.date}</p></a>
                     </div>
                   </div>

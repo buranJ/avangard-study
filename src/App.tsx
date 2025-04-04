@@ -7,7 +7,6 @@ import LoadingOverlay from 'components/LoadingOverlay';
 import ScrollToTop from 'components/ScrollToTop';
 import WhatsAppWidget from 'components/WhatsAppWidget';
 
-
 // import Test from './users/Nazmi/Test';
 // import ApartmentInfo from "./users/TestNews/Test"
 
@@ -50,7 +49,6 @@ function App() {
       <ScrollToTop />
       {/* <ApartmentInfo/> */}
       <AppWithLoading />
-
 
       {/* <Test/> */}
       <WhatsAppWidget phoneNumber='+996997007007' message='Здравствуйте!' />
