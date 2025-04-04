@@ -11,6 +11,7 @@ import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
 import Features from './Features'
 import Architecture from './Architecture'
+import FloorPlans from './FloorPlans'
 
 function Panarama() {
     return (
@@ -19,6 +20,7 @@ function Panarama() {
             <AboutObject />
             <ObjectMetrics />
             <BeforeAfter />
+            <FloorPlans />
             {/* <Architecture /> */}
             <MasterPlan />
             <Gallery />
