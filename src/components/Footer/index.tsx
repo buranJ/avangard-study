@@ -143,7 +143,7 @@ import logoRed from 'assets/images/logo-red.svg';
 
 import './styles.scss';
 
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 
 
 type FooterLink = {

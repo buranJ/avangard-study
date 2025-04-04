@@ -16,6 +16,7 @@ import image9 from "../../assets/images/TechnicalBase/9.png"
 import image10 from "../../assets/images/TechnicalBase/10.png"
 import image11 from "../../assets/images/TechnicalBase/11.png"
 import image12 from "../../assets/images/TechnicalBase/12.png"
+import image13 from "../../assets/images/TechnicalBase/13.png"
 import image14 from "../../assets/images/TechnicalBase/14.png"
 import image15 from "../../assets/images/TechnicalBase/15.png"
 
@@ -27,13 +28,24 @@ import Gallery from 'components/Gallery';
 
 
 const TechnicalBasePage = () => {
-  const imageOfTech = [
-    image1, image2, image3,
-    image4, image5, image6,
-    image7, image8, image9,
-    image10, image11, image12,
-    image14, image15
-  ]
+  const imageOfTech: { image: string, description?: string }[] = [
+    { image: image1, description: "Описание изображения 1" },
+    { image: image2, description: "Описание изображения 2" },
+    { image: image3, description: "Описание изображения 3" },
+    { image: image4, description: "Описание изображения 4" },
+    { image: image5, description: "Описание изображения 5" },
+    { image: image6, description: "Описание изображения 6" },
+    { image: image7, description: "Описание изображения 7" },
+    { image: image8, description: "Описание изображения 8" },
+    { image: image9, description: "Описание изображения 9" },
+    { image: image10, description: "Описание изображения 10" },
+    { image: image11, description: "Описание изображения 11" },
+    { image: image12, description: "Описание изображения 12" },
+    { image: image13, description: "Описание изображения 13" },
+    { image: image14, description: "Описание изображения 14" },
+    { image: image15, description: "Описание изображения 15" }
+];
+
   const fixedSizes = [
     { width: 456, height: 456 },
     { width: 648, height: 364 },

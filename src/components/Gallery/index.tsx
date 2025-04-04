@@ -34,43 +34,45 @@ interface IProps {
 }
 
 const Gallery: FC<IProps> = ({ imgsSrc, setActiveImg, activeImg }) => {
+console.log(imgsSrc);
 
   return (
     <>
       <section className="galerey">
-        <div className="container">
+        <div className="container mx-auto">
           <div className="galerey__content">
 
             <h2 className='text-black text-[28px] text-center font-bold md:text-[50px]'>Общий вид зданий</h2>
             <p className='text-[#00091B] text-[18px] text-center md:text-[25px]'>Нажмите для увеличения</p>
 
-            <div className="galerey__body mt-[30px] flex flex-wrap justify-center items-center gap-2 gap-y-[12px] md:mt-[70px]">
-              {imfInterface.map((src, index) => {
+            <div className="galerey__body mt-[134px] flex flex-wrap justify-center items-start gap-2 gap-y-[12px] md:mt-[134px]">
+              {imgsSrc.map((src, index) => {
+                console.log(src);
+                
                 const { width, height } =
                   index < 5 ? fixedSizes[index] : fixedSizes[index % 5];
                 return (
-                  <div style={{ width: `${width}px`, height: `${height}px` }}
-                >
-              <img
-                key={index}
-                src={src}
-                alt={`Tech ${index + 1}`}
-                width={width}
-                height={height}
-                className="object-cover"
-                style={{ width: `${width}px`, height: `${height}px` }}
-              />
+                  <div style={{ width: `${width}px`, height: `${height}px ${index % 5  ===  0? "mt-10 md:mt-20" : ""}` }}
+                  >
+                    <img
+                      key={index}
+                      src={src.image}
+                      alt={`Tech ${index + 1}`}
+                      width={width}
+                      height={height}
+                      className={`${[5].includes(index) ? "md:mt-[-90px]" : "md:mt-[-90px]"}${[2].includes(index)?"md:mt-[90px]" : ""} ${[12,7].includes(index)?"md:mt-[0px]" : ""}`}
+                      style={{ width:`${width}px`, height:`${height}px` }}
+                    />
                   </div>
-
-            );
+                );
               })}
-
+            </div>
           </div>
         </div>
-      </div>
-    </section >
+      </section >
     </>
   );
 }
 
 export default Gallery;
+
