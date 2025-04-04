@@ -23,6 +23,12 @@ type Marerials = {
 
 }
 
+type ChosenArr = {
+  id: number,
+  title: string,
+  description: string,
+}
+
 
 const features: Feature[] = [
   {
@@ -97,7 +103,7 @@ const Architecture: FC<IProps> = ({ architecture }) => {
 
   const refs = useRef<(HTMLImageElement | null)[]>([]);
   const [heights, setHeights] = useState<number[]>([]);
-  const ChosenArr = isButtonChoice === "facade" ? features : materials
+  const ChosenArr : ChosenArr[] = isButtonChoice === "facade" ? features : materials
 
   useEffect(() => {
     if (refs.current.length > 1) {
@@ -113,7 +119,7 @@ const Architecture: FC<IProps> = ({ architecture }) => {
       setHeights(newHeights);
 
     }
-  },);
+  },[]);
 
   const toggleButton = (buttonName: string) => {
     setButtonChoice(buttonName)

@@ -17,9 +17,13 @@ const SupBottom: FC<Footer> = ({ youtube_url, building }) => {
 
 
   return (
-    <>
-    
-    </>
+    <section className="SupBottom">
+      <div className="container">
+       <div className="SupBottom__video rounded-[29px] w-[1128px] h-[632px]">
+       <iframe width="560" height="315" src={youtube_url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+       </div>
+      </div>
+</section>
   );
 };
 
