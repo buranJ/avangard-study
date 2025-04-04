@@ -21,7 +21,7 @@ function Panarama() {
             <BeforeAfter />
             {/* <Architecture /> */}
             <MasterPlan />
-            <Gallery />
+            {/* <Gallery /> */}
             <Location />
             <MapImages />
             <Features />
