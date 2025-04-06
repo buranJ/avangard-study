@@ -16,7 +16,7 @@ import Captions from "yet-another-react-lightbox/plugins/captions";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
-const imfInterface = [
+const imgInterface = [
   img1, img2, img3, img4, img5
 ]
 const fixedSizes = [
