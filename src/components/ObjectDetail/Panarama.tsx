@@ -11,11 +11,8 @@ import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
 import Features from './Features'
 import Architecture from './Architecture'
-<<<<<<< Updated upstream
 import FloorPlans from './FloorPlans'
-=======
 import SupBottom from './SupBottom'
->>>>>>> Stashed changes
 
 function Panarama() {
     return (
@@ -24,12 +21,8 @@ function Panarama() {
             <AboutObject />
             <ObjectMetrics />
             <BeforeAfter />
-<<<<<<< Updated upstream
             <FloorPlans />
-            {/* <Architecture /> */}
-=======
             <Architecture /> 
->>>>>>> Stashed changes
             <MasterPlan />
             <Gallery />
             <Location />
