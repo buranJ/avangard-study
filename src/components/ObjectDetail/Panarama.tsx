@@ -13,6 +13,7 @@ import Features from './Features'
 import Architecture from './Architecture'
 import FloorPlans from './FloorPlans'
 import SupBottom from './SupBottom'
+import VacanciesPage from 'components/Vacancies'
 
 function Panarama() {
     return (
@@ -28,6 +29,7 @@ function Panarama() {
             <Location />
             <MapImages />
             <Features />
+            <VacanciesPage/>
             <SupBottom />
         </>
     )
