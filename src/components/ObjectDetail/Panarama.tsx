@@ -4,20 +4,22 @@ import { useParams } from 'react-router-dom';
 import { useGetObjectQuery } from 'api/objects/objects.api';
 import Hero from 'components/Hero'
 
-import AnimatedSVG from '../../Users/Animation'
+// import AnimatedSVG from '../../Users/Animation'
 import Gallery from '../Gallery'
 import AboutObject from './AboutObject'
-import Architecture from './Architecture'
+// import Architecture from './Architecture'
 // import Architecture from './Architecture'
 import BeforeAfter from './BeforeAfter'
-import Features from './Features'
+// import Features from './Features'
 // import Features from './Features'
 import FloorPlans from './FloorPlans'
 import Location from './Location'
 import MapImages from './MapImages'
 import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
-
+import Features from './Features'
+import Architecture from './Architecture'
+// import AnimatedSVG from '../../Users/Animation'
 import img1 from '../../assets/images/Galerey/1.png'
 import img2 from '../../assets/images/Galerey/2.png'
 import img3 from '../../assets/images/Galerey/3.png'
@@ -34,7 +36,8 @@ const imgInterface: { image: string; description: string }[] = [
   ];
   
 import SupBottom from './SupBottom'
-import WhatInteresting from './WhatInteresting'
+import VacanciesPage from 'components/Vacancies'
+
 function Panarama() {
     const { slug } = useParams();
     const { data: objectQuery, isLoading, isError } = useGetObjectQuery({ slug: 'panoramapark' as string });
@@ -48,8 +51,7 @@ function Panarama() {
             <ObjectMetrics />
             <BeforeAfter />
             <FloorPlans />
-            {/* <Architecture /> */}
-            <Architecture />
+            <Architecture /> 
             <MasterPlan />
             <Gallery imgsSrc={imgInterface}/>
             {/* <Gallery  imgsSrc={}/> */}
@@ -57,6 +59,7 @@ function Panarama() {
             <WhatInteresting />
             <MapImages />
             <Features />
+            <VacanciesPage/>
             <SupBottom />
         </>
     )

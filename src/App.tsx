@@ -6,6 +6,7 @@ import Footer from 'components/Footer';
 import LoadingOverlay from 'components/LoadingOverlay';
 import ScrollToTop from 'components/ScrollToTop';
 import WhatsAppWidget from 'components/WhatsAppWidget';
+import NewsDetail from 'pages/NewsDetail/NewsDetail';
 
 // import Test from './users/Nazmi/Test';
 // import ApartmentInfo from "./users/TestNews/Test"
@@ -38,6 +39,7 @@ const AppWithLoading = () => {
       <LoadingOverlay isLoading={isLoading} fadeAnim={fadeAnim} />
       <AppRoutes />
       {/* <Hero /> */}
+      {/* <NewsDetail /> */}
       <Footer />
     </>
   );

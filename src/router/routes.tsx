@@ -8,7 +8,7 @@ import Contacts from 'pages/Contacts';
 import FinishedProjectDetail from 'pages/FinishedProjectDetail';
 import Home from 'pages/Home';
 import News from 'pages/News';
-import NewsDetail from 'pages/NewsDetail';
+import NewsDetail from 'pages/NewsDetail/NewsDetail';
 import ObjectDetail from 'pages/ObjectDetail';
 import Smi from 'pages/Smi';
 import TechnicalBase from 'pages/TechnicalBase';
