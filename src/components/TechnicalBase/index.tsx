@@ -46,15 +46,6 @@ const TechnicalBasePage = () => {
     { image: image15, description: "Описание изображения 15" }
 ];
 
-  const imageOfTech = [
-
-   
-    image1, image2, image3,
-    image4, image5, image6,
-    image7, image8, image9,
-    image10, image11, image12,
-    image14, image15
-  ]
   const fixedSizes = [
     { width: 456, height: 456 },
     { width: 648, height: 364 },

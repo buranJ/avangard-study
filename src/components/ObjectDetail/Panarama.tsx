@@ -4,19 +4,20 @@ import { useParams } from 'react-router-dom';
 import { useGetObjectQuery } from 'api/objects/objects.api';
 import Hero from 'components/Hero'
 
+import AnimatedSVG from '../../Users/Animation'
 import Gallery from '../Gallery'
 import AboutObject from './AboutObject'
 import Architecture from './Architecture'
+// import Architecture from './Architecture'
 import BeforeAfter from './BeforeAfter'
 import Features from './Features'
+// import Features from './Features'
 import FloorPlans from './FloorPlans'
 import Location from './Location'
 import MapImages from './MapImages'
 import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
-import Features from './Features'
-import Architecture from './Architecture'
-import AnimatedSVG from '../../Users/Animation'
+
 import img1 from '../../assets/images/Galerey/1.png'
 import img2 from '../../assets/images/Galerey/2.png'
 import img3 from '../../assets/images/Galerey/3.png'
