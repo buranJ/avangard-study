@@ -1,4 +1,5 @@
 import { useGetTechnicalBaseQuery } from 'api/contact/contact.api';
+import Gallery from 'components/Gallery';
 import Mansory from 'components/Masonry';
 import PageHeading from 'components/PageHeading';
 
@@ -20,7 +21,6 @@ import image14 from "../../assets/images/TechnicalBase/14.png"
 import image15 from "../../assets/images/TechnicalBase/15.png"
 
 import './styles.scss';
-import Gallery from 'components/Gallery';
 
 
 
@@ -28,6 +28,8 @@ import Gallery from 'components/Gallery';
 
 const TechnicalBasePage = () => {
   const imageOfTech = [
+
+   
     image1, image2, image3,
     image4, image5, image6,
     image7, image8, image9,

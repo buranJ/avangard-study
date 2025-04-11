@@ -2,6 +2,8 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { useGetHomeInfoQuery } from 'api/home/home.api';
+import { useGetObjectQuery } from 'api/objects/objects.api';
+
 
 const HomeHero = React.lazy(() => import('./Hero'));
 const OngoingProjects = React.lazy(() => import('./OngoingProjects'));
@@ -23,8 +25,11 @@ const LazyComponent = ({ Component }: { Component: React.FC }) => {
 };
 
 const HomePage = () => {
+  // console.log(useGetHomeInfoQuery);
   const { data } = useGetHomeInfoQuery();
-
+  // const { objData } = useGetObjectQuery()
+  // console.log(objData);
+  // console.log(data);
   const heroData = {
     banner: data?.banner,
     first_key: data?.first_key,
@@ -39,7 +44,7 @@ const HomePage = () => {
     <>
       <React.Suspense fallback={<div></div>}>
         <LazyComponent Component={() => <HomeHero {...heroData} />} />
-        <LazyComponent Component={OngoingProjects} />
+        {/* <LazyComponent Component={OngoingProjects} /> */}
         <LazyComponent Component={News} />
         <LazyComponent Component={ConsultationForm} />
       </React.Suspense>

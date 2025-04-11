@@ -1,32 +1,42 @@
 import React from 'react';
 
-import { Location } from 'types/common';
-import Gallery from 'components/Gallery';
-
-import mapImage from '../../../assets/images/maps/map-1.png';
-import cityPanorama from '../../../assets/images/maps/map-2.png';
-['jsfshk','sjkhfjks']
-import './styles.scss';
-
-interface MapImages {
-  images: Location;
+interface MapImagesProps {
+  images: string[]; 
 }
-const MapImages: React.FC<MapImages> = ({ images }) => {
+
+const MapImages: React.FC<MapImagesProps> = ({ images }) => {
+
+  if (!images || images.length === 0) {
+    return (
+    <>
+    </>
+    );
+  }
 
   return (
-    <div className="panorama-map w-full  py-10">
+    <div className="w-full py-10">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-          <div className="w-full md:w-1/2 flex justify-center">
-            <img src={mapImage} alt="Карта Panorama Park"
-              className="w-[800px] h-[400px] object-contain rounded-lg"
-            />
-          </div>
-          <div className="w-full md:w-1/2 flex justify-center">
-            <img src={cityPanorama} alt="Инфографика Panorama Park"
-              className="w-[800px] h-[400px] object-contain rounded-lg"
-            />
-          </div>
+        <div
+          className={`flex flex-col ${images.length === 2 ? 'md:flex-row' : ''} justify-center items-center gap-8`}
+        >
+          {images.map((url, index) => (
+            <div
+              key={index}
+              className={`${
+                images.length === 1 ? 'w-full' : 'md:w-1/2'
+              } flex justify-center`}
+            >
+              <img
+                src={url}
+                alt={`Изображение ${index + 1}`}
+                className={`${
+                  images.length === 1
+                    ? 'w-full h-[240px] sm:h-[320px] md:h-[700px]'
+                    : 'w-[600px] h-[240px] sm:h-[320px] md:h-[500px]'
+                } object-contain rounded-lg`}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

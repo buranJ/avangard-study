@@ -23,27 +23,27 @@ const AboutObject = lazy(() => import('./AboutObject'));
 import './styles.scss';
 
 const ObjectDetailPage = () => {
-  const { slug } = useParams();
-  const { data: objectQuery, isLoading, isError } = useGetObjectQuery({ slug: slug as string });
+  // const { slug } = useParams();
+  // const { data: objectQuery, isLoading, isError } = useGetObjectQuery({ slug: 'panoramapark' as string });
+
+  // console.log(objectQuery);
 
 
- 
 
+  // const bannerSrc = useMemo(() => {
+  //   if (!objectQuery) return '';
 
-  const bannerSrc = useMemo(() => {
-    if (!objectQuery) return '';
+  //   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  //   return isMobile && objectQuery.banner_phones ? objectQuery.banner_phones : objectQuery.banner || '';
+  // }, [objectQuery]);
 
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-    return isMobile && objectQuery.banner_phones ? objectQuery.banner_phones : objectQuery.banner || '';
-  }, [objectQuery]);
+  // if (isLoading) return <h1>Loading...</h1>;
+  // if (isError) return <h1>Error...</h1>;
+  // if (!objectQuery) return <h1>Not found</h1>;
 
-  if (isLoading) return <h1>Loading...</h1>;
-  if (isError) return <h1>Error...</h1>;
-  if (!objectQuery) return <h1>Not found</h1>;
- 
   return (
     <>
-      <Hero
+      {/* <Hero
         pageName='objects-detail bg-black/50 bg-blend-overlay h-[97%]'
         videoSrc={bannerSrc}
         bannerSrc={objectQuery?.banner_img}
@@ -71,7 +71,7 @@ const ObjectDetailPage = () => {
         {objectQuery.location && <MapImages images={objectQuery.location} />}
         {objectQuery.interest_nearby && <WhatInteresting data={objectQuery.interest_nearby.interest_nearby} />}
         {objectQuery.footer && <SupBottom {...objectQuery.footer} />}
-      </Suspense>
+      </Suspense> */}
     </>
   );
 };

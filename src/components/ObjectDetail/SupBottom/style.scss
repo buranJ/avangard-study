@@ -1,0 +1,40 @@
+.objectBtns {
+    @apply my-[50px] xl:my-[90px];
+}
+
+.objectBtns__content {
+    @apply flex flex-col gap-[30px] xl:flex-row xl:gap-0 xl:justify-between;
+}
+
+.objectBtns__top,
+.objectBtns__bot {
+    @apply flex flex-col gap-[20px] items-center rounded-[33px] xl:w-[45%] xl:py-[30px] xl:px-[24px] xl:justify-between;
+}
+
+.objectBtns__top {
+    @apply xl:gap-[0px]
+}
+
+.objectBtns__top {
+    @apply bg-[#00091b];
+}
+
+.objectBtns__bot {
+    @apply bg-[#00417d];
+}
+
+.objectBtns__top-title,
+.objectBtns__bot-title {
+    @apply font-sans font-bold text-[24px] text-center text-white pt-[30px] xl:text-[50px] xl:pt-0;
+}
+
+.objectBtns__bot-description,
+.objectBtns__top-description {
+    color: rgba(255, 255, 255, 0.7);
+    @apply font-sans font-normal text-[15px] text-center xl:text-[25px] xl:my-[20px];
+}
+
+.objectBtns__top-btn,
+.objectBtns__bot-btn {
+    @apply mb-[30px] border-none xl:mb-[0px];
+}
