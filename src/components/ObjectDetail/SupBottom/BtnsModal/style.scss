@@ -1,0 +1,105 @@
+.BtnsModal__out {
+    @apply fixed inset-0 z-[666] flex items-center justify-center px-[30px] bg-black bg-opacity-50;
+}
+
+.BtnsModal {
+    @apply relative p-[10px] m-[16px] w-full max-w-[64rem] bg-white rounded-[31px] xl:p-[40px];
+}
+
+.BtnsModal__wrapper {
+    @apply min-h-[250px] mx-auto;
+}
+
+.BtnsModal__content {
+    @apply flex flex-col gap-[20px] items-center xl:flex-row xl:gap-[50px];
+}
+
+.BtnsModal__close {
+    @apply absolute top-[30px] right-[30px];
+}
+
+.BtnsModal__top {
+    @apply min-h-[236px] max-h-[458px] w-full xl:h-full;
+}
+
+.BtnsModal__top img {
+    @apply w-full h-full object-cover;
+}
+
+.BtnsModal__bot {
+    @apply w-full;
+}
+
+.BtnsModal__title {
+    @apply font-sans font-bold text-[24px] text-center text-[#00091b] md:text-[50px] xl:mt-[63px];
+}
+
+.BtnsModal__form {
+    @apply relative flex flex-col mt-[18px] xl:mt-[30px];
+}
+
+.BtnsModal__form-wrap {
+    border: 1px solid #00091b;
+    border-radius: 15px;
+    @apply flex justify-between items-center pl-[15px];
+}
+
+.BtnsModal__form-wrapper {
+    @apply flex gap-[15px];
+}
+
+.BtnsModal__form-accardion {
+    @apply absolute top-[110%] max-h-[150px] w-full flex-col gap-[15px] overflow-auto rounded-[18px] bg-white py-[8px] px-[22px]
+}
+
+.BtnsModal__form-accardion-wrapper {
+    @apply flex gap-6 items-center cursor-pointer p-2
+}
+
+.BtnsModal__form-accardion-wrapper label {
+    @apply cursor-pointer text-[19px] font-sans font-medium text-center text-[#00417D]
+}
+
+.BtnsModal__form-btn {
+    @apply py-[20px] px-[15px] rounded-[15px] bg-[#00091b];
+}
+
+.BtnsModal__form-label {
+    @apply font-sans font-medium text-[19px] text-center text-[#00091b] xl:text-[30px];
+}
+
+
+
+.BtnsModal__slider {
+    overflow: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: gray transparent;
+    @apply flex gap-[8px] mt-[15px] justify-center items-center xl:mt-[42px];
+}
+
+.BtnsModal__slider::-webkit-scrollbar {
+    @apply mt-[2px] h-3;
+}
+
+.BtnsModal__slider::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 4px;
+}
+
+.BtnsModal__slider::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 4px;
+}
+
+.BtnsModal__slider img {
+    @apply cursor-pointer rounded-[21px] w-[33.3333333%] h-full overflow-hidden flex-shrink-0;
+}
+
+.BtnsModal__bot-btn-wrap {
+    @apply flex justify-center;
+}
+
+.BtnsModal__btn {
+    @apply mt-[25px] px-[120.5px] py-[14px] rounded-[30px] bg-[#00091b] text-[20px] text-white text-center font-medium font-sans xl:px-[186.5px] xl:py-[19px] xl:mt-[42px];
+}
