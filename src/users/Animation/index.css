@@ -1,0 +1,45 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  30%{
+    opacity: 1;
+    transform: translateY(80%);
+  }
+  50%{
+    opacity: 2;
+    transform: translateY(90%);
+  }
+  100% {
+    opacity: 3;
+    transform: translateY(0%);
+  }
+}
+
+.letter-A {
+  transform: 1s;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0s;
+}
+/* .letter-R {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+} */
+
+.vangard {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* .line {
+  animation: fadeIn 4s ease-out forwards;
+  animation-delay: 1.3s;
+} */
+
+/* .style {
+  animation: fadeIn 6s ease-out forwards;
+  animation-delay: 1.5s;
+} */
+
+  
