@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 
 import { useGetObjectQuery } from 'api/objects/objects.api';
 import Hero from 'components/Hero'
-import VacanciesPage from 'components/Vacancies'
 
 import Gallery from '../Gallery'
 import AboutObject from './AboutObject'
@@ -21,7 +20,7 @@ function Panarama() {
     const { slug } = useParams();
     const { data: objectQuery, isLoading, isError } = useGetObjectQuery({ slug: 'panoramapark' as string });
 
-    console.log(objectQuery?.architecture);
+    console.log(objectQuery);
     return (
         <>
             <Hero />
@@ -37,7 +36,6 @@ function Panarama() {
             <WhatInteresting />
             <MapImages />
             <Features />
-            <VacanciesPage />
             <SupBottom />
         </>
     )
