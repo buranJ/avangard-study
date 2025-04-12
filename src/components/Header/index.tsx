@@ -50,7 +50,9 @@ const Header: FC<IProps> = ({ menuData, consultationNumber }) => {
     <header className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-lg shadow-lg z-50 pb-[20px]">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mt-4">
+          <Link to={"/"} >
           <img src={logo} alt="Avangard" className="h-10" />
+          </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-6">
