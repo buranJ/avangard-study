@@ -10,6 +10,8 @@ import img3 from "../../../assets/images/News/image3.svg"
 import scale from "../../../assets/images/News/Vector.svg"
 
 import './styles.scss';
+import { NewsMock } from "pages/NewsDetail"
+// import { mockData } from "components/NewsCard/NewsData.ts";
 
 
 export interface IRaport {
@@ -17,6 +19,7 @@ export interface IRaport {
   title: string;
   date: string;
   image: string;
+  slug: string;
 }
 
 
@@ -27,21 +30,26 @@ export const mockData: IRaport[] = [
     title: "Стандарт паркинга в современном ЖК",
     date: "25.07.2024",
     image: img,
+    slug: "excursion-student",
   },
   {
     id: 2,
     title: "Москва Сити Июнь 2024",
     date: "25.07.2024",
     image: img2,
+    slug: "salkyn-tor",
+
   },
   {
     id: 3,
     title: "Елисейские поля Июнь 2024",
     date: "24.07.2024",
     image: img3,
+    slug: "premium-class",
+
 
   },
-  
+
 ];
 const News = () => {
 
@@ -59,24 +67,24 @@ const News = () => {
             </div>
             <div className="news__main mt-[30px] grid gap-[15px] md:justify-between pb-[50px] md:flex  md:max-w-[100%] ">
               {mockData.map((item: IRaport) => {
+                const newsItem = NewsMock.find((news) => item.slug === news.slug)
                 return <div key={item.id} className="news__content flex items-center md:text-center md:flex-col justify-between  md:max-w-[33%] bg-white py-[7px] px-[7px] rounded-[18px] " >
-                  <div className="news__wrap md:relative flex md:block ">
-                    <div className="image md:w-[330px] h-[120px] md:h-[240px] " >
-                      <img src={item.image} alt="image" className=" w-[100%]  h-[100%]" />
-                    </div>
-                    <div className="max-w-[161px] ml-[15px] md:max-w-[307px] ">
-                      <h2 className=" text-[19px] font-[500] md:text-[30px] md:mt-[10px] " >{item.title}</h2>
-                      <a href="#"><p className=" md:absolute md:top-[2%] md:right-[5%]   font-[500] mt-[10px] text-[15px] px-[15px] py-[10px] bg-[#00091B] text-white rounded-[62px] max-w-[107px] flex items-center justify-center  " >{item.date}</p></a>
-                    </div>
-                  </div>
+                  {newsItem && (
+                    <Link to={`/news-detail/${newsItem.slug}`} key={newsItem.id}>
+                      <div className="news__wrap md:relative flex md:block ">
+                        <div className="image md:w-[330px] h-[120px] md:h-[240px] " >
+                          <img src={item.image} alt="image" className=" w-[100%]  h-[100%]" />
+                        </div>
+                        <div className="max-w-[161px] ml-[15px] md:max-w-[307px] ">
+                          <h2 className=" text-[19px] font-[500] md:text-[30px] md:mt-[10px] " >{item.title}</h2>
+                          <a href="#"><p className=" md:absolute md:top-[2%] md:right-[5%]   font-[500] mt-[10px] text-[15px] px-[15px] py-[10px] bg-[#00091B] text-white rounded-[62px] max-w-[107px] flex items-center justify-center  " >{item.date}</p></a>
+                        </div>
+                      </div>
+                    </Link>
+                  )}
                 </div>
-
               })}
-
-
             </div>
-
-
           </div>
         </div>
       </section>

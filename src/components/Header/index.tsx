@@ -113,7 +113,6 @@ const Header: FC<IProps> = ({ menuData, consultationNumber }) => {
                   <Link to={item.url || "#"}>{item.label}</Link>
                   {item.subMenu && <span>{openMobileSubmenus[item.id] ? "▲" : "▼"}</span>}
                 </div>
-
                 {item.subMenu && openMobileSubmenus[item.id] && (
                   <div className="pl-4">
                     {item.subMenu.map((subItem) => (
