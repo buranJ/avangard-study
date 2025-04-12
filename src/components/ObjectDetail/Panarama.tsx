@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 import { useGetObjectQuery } from 'api/objects/objects.api';
@@ -17,9 +17,10 @@ import Location from './Location'
 import MapImages from './MapImages'
 import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
+
 import Features from './Features'
 import Architecture from './Architecture'
-// import AnimatedSVG from '../../Users/Animation'
+import AnimatedSVG from '../../users/Animation'
 import img1 from '../../assets/images/Galerey/1.png'
 import img2 from '../../assets/images/Galerey/2.png'
 import img3 from '../../assets/images/Galerey/3.png'
@@ -33,32 +34,34 @@ const imgInterface: { image: string; description: string }[] = [
     { image: img3, description: "ЖК “Испанский дом”" },
     { image: img4, description: "ЖК “Испанский дом”" },
     { image: img5, description: "ЖК “Испанский дом”" },
-  ];
-  
+];
+
 import SupBottom from './SupBottom'
 import VacanciesPage from 'components/Vacancies'
+import WhatInteresting from './WhatInteresting';
 
 function Panarama() {
     const { slug } = useParams();
     const { data: objectQuery, isLoading, isError } = useGetObjectQuery({ slug: 'panoramapark' as string });
+    const [activeImg, setActiveImg] = useState<string>("");
 
-    console.log(objectQuery?.numeration);
+    // console.log(objectQuery?.numeration);
     return (
         <>
-        {/* <AnimatedSVG/> */}
+            <AnimatedSVG />
             <Hero />
             <AboutObject />
             <ObjectMetrics />
             <BeforeAfter />
             <FloorPlans />
             <Architecture />
-            <MasterPlan gen_plan={objectQuery?.numeration} image ={objectQuery?.numeration?.image}/>
-            <Gallery imgsSrc={objectQuery?.gallery?.images}/>
+            <MasterPlan gen_plan={objectQuery?.numeration} image={objectQuery?.numeration?.image} />
+            <Gallery imgsSrc={objectQuery?.gallery?.images} activeImg={activeImg} setActiveImg={setActiveImg} />
             <Location />
-            {/* <WhatInteresting /> */}
+            <WhatInteresting />
             <MapImages />
             <Features />
-            <VacanciesPage/>
+            <VacanciesPage />
             <SupBottom />
         </>
     )

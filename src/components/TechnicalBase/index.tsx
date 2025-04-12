@@ -5,6 +5,7 @@ import PageHeading from 'components/PageHeading';
 import mockTechnicalBase from "./mocType"
 import './styles.scss';
 import Item from 'components/Home/OngoingProjects/Item';
+import { useState } from 'react';
 
 const TechnicalBasePage = () => {
   const { data } = useGetTechnicalBaseQuery()
@@ -39,10 +40,11 @@ const TechnicalBasePage = () => {
       />
     )
   }
+  const [activeImg, setActiveImg] = useState<string>("")
 
   return (
     <>
-      <section className="technica">
+      <section className="technica mt-[20px] ">
         <div className="container mx-auto">
           <div className="tech__content">
             <div className="title">
@@ -63,7 +65,7 @@ const TechnicalBasePage = () => {
                   <li className="text-end list-none">
                     Видео 2019 года</li>
                 </div>
-                <Gallery imgsSrc={imageOfTech} />
+                <Gallery imgsSrc={imageOfTech} activeImg={activeImg} setActiveImg={setActiveImg} />
               </div>
             </div>
           </div>
