@@ -44,7 +44,7 @@ const HomePage = () => {
     <>
       <React.Suspense fallback={<div></div>}>
         <LazyComponent Component={() => <HomeHero {...heroData} />} />
-        {/* <LazyComponent Component={OngoingProjects} /> */}
+        <LazyComponent Component={OngoingProjects} />
         <LazyComponent Component={News} />
         <LazyComponent Component={ConsultationForm} />
       </React.Suspense>
