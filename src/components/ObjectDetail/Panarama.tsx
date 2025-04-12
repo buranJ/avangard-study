@@ -45,7 +45,7 @@ function Panarama() {
     console.log(objectQuery?.numeration);
     return (
         <>
-        <AnimatedSVG/>
+        {/* <AnimatedSVG/> */}
             <Hero />
             <AboutObject />
             <ObjectMetrics />
@@ -55,7 +55,7 @@ function Panarama() {
             <MasterPlan gen_plan={objectQuery?.numeration} image ={objectQuery?.numeration?.image}/>
             <Gallery imgsSrc={objectQuery?.gallery?.images}/>
             <Location />
-            <WhatInteresting />
+            {/* <WhatInteresting /> */}
             <MapImages />
             <Features />
             <VacanciesPage/>
