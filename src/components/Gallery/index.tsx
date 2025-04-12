@@ -15,7 +15,6 @@ const fixedSizes = [
   { width: 312, height: 364 },
   { width: 312, height: 364 }
 ];
-
 interface IProps {
   imgsSrc?: {
     id: number;
@@ -29,11 +28,9 @@ interface IProps {
 }
 const Gallery: FC<IProps> = ({ imgsSrc, setActiveImg, activeImg }) => {
   const [isOpen, setIsOpen] = useState(false)
-  console.log(activeImg)
   return (
     <>
       <Lightbox
-
         open={!!activeImg}
         index={imgsSrc?.findIndex((src) => src.image === activeImg)}
         close={() => setActiveImg && setActiveImg("")}
@@ -46,22 +43,14 @@ const Gallery: FC<IProps> = ({ imgsSrc, setActiveImg, activeImg }) => {
             <h2 className='text-black text-[28px] text-center font-bold md:text-[50px]'>Общий вид зданий</h2>
             <p className='text-[#00091B] text-[18px] text-center md:text-[25px]'>Нажмите для увеличения</p>
             <div className="galerey__body mt-[134px]  flex flex-wrap justify-center items-start gap-2 gap-y-[12px] md:mt-[134px]">
-
               {imgsSrc?.map((src, index) => {
-
-
                 const { width, height } =
                   index < 5 ? fixedSizes[index] : fixedSizes[index % 5];
                 return (
                   <div key={index} style={{ width: `${width}px`, height: `${height}px ${index % 5 === 0 ? "mt-10 md:mt-20" : ""}` }}
                   >
-
-
-
                     <img
-
                       onClick={() => setActiveImg && setActiveImg(src.image)}
-
                       src={src.image}
                       alt={`Tech ${index + 1}`}
                       width={width}
