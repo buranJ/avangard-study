@@ -39,7 +39,7 @@ function Panarama() {
     const { slug } = useParams();
     const { data: objectQuery, isLoading, isError } = useGetObjectQuery({ slug: 'panoramapark' as string });
 
-    console.log(objectQuery);
+    console.log(objectQuery?.numeration);
     return (
         <>
         <AnimatedSVG/>
@@ -48,11 +48,9 @@ function Panarama() {
             <ObjectMetrics />
             <BeforeAfter />
             <FloorPlans />
-            {/* <Architecture /> */}
             <Architecture />
-            <MasterPlan />
-            <Gallery imgsSrc={imgInterface}/>
-            {/* <Gallery  imgsSrc={}/> */}
+            <MasterPlan gen_plan={objectQuery?.numeration} image ={objectQuery?.numeration?.image}/>
+            <Gallery imgsSrc={objectQuery?.gallery?.images}/>
             <Location />
             <WhatInteresting />
             <MapImages />
