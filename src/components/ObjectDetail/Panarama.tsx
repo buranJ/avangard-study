@@ -42,12 +42,11 @@ function Panarama() {
     const { slug } = useParams();
     const { data: objectQuery, isLoading, isError } = useGetObjectQuery({ slug: 'panoramapark' as string });
 
-    console.log(objectQuery?.numeration);
     return (
         <>
         {/* <AnimatedSVG/> */}
             <Hero />
-            <AboutObject />
+            <AboutObject Data = {objectQuery?.about_complex} />
             <ObjectMetrics />
             <BeforeAfter />
             <FloorPlans />
