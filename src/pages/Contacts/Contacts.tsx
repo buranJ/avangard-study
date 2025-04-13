@@ -41,6 +41,13 @@ const inputsInform = [
 ]
 
 export const Contacts = () => {
+  const ContactsData = useGetContactQuery()
+  console.log(ContactsData)
+  const AddressArr = ContactsData.currentData?.address
+  const SalesOfficeArr = ContactsData.currentData?.sales_offices
+  const SocialMedia = ContactsData.currentData?.socials
+  const SomReq = ContactsData.currentData?.som_requisites
+  const DollarReq = ContactsData.currentData?.dollar_requisites
   const HandleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue({ ...isInputValue, [event.target.name]: event.target.value })
   }
@@ -64,14 +71,13 @@ export const Contacts = () => {
           <div className="contacts__adress__block mt-[50px] md:mt-[90px]">
             <h3 className="address__us text-[19px] text-center md:text-[30px] md:text-start">Наши адреса</h3>
             <ul className="address__details flex flex-col gap-[15px] text-center md:text-start text-[15px] md:text-[20px] mt-[30px] md:mt-[50px]">
-              <li className="flex flex-col gap-[10px]  md:flex-row">
-                <span>Головной офис:</span>
-                ул. Токтогула 125/1, Бизнес Центр «Avangard»,
-                Tower A, 2-этаж</li>
-              <li className="flex flex-col gap-[7px] md:flex-row"><span>Офис продаж:</span> 1-этаж</li>
-              <li className="flex flex-col gap-[7px]  md:flex-row"><span>Офис продаж «Globus»:</span> ул. Токомбаева 53/1, гипермаркет «Globus» Офис</li>
-              <li className="flex flex-col gap-[7px]  md:flex-row"> <span>продаж в ЖК "Елисейские Поля":</span> ул. Куттубаева 19</li>
-              <li className="flex flex-col gap-[7px]  md:flex-row"><span>Юридический адрес:</span> ул. Токтогула 125/1</li>
+              {AddressArr?.map((item, index) => (
+                <li key={index}
+                  className="flex flex-col gap-[10px]  md:flex-row">
+                  <span className='mr-[20px]'>{item.title}</span>
+                  {item.value}
+                </li>
+              ))}
             </ul>
             <div className="contacts__form-block  flex flex-col  lg:flex-row lg:justify-between mt-[50px] md:mt-[90px]">
               <div className="contacts__sale-wrapper">
@@ -85,16 +91,16 @@ export const Contacts = () => {
                     <a href="mailto:info@avangardstyle.kg" className="sale__email">info@avangardstyle.kg</a>
                   </div>
                 </div>
-                <div className="contacts__date mt-[50px] md:mt-[90px] text-center md:text-start">
-                  <h3 className="date__title text-[19px] md:text-[30px]">Центральный офис продаж БЦ<br></br>
-                    “Авангард”:</h3>
-                  <ul className="date__list flex flex-col gap-[10px]">
-                    <li className="text-[15px] md:text-[20px] mt-[30px] md:mt-[50px]">Пн – Пт: с 8:30 до 18:00</li>
-                    <li className="text-[15px] md:text-[20px]">Суббота: с 9:00 до 13:00</li>
-                    <li className="text-[15px] md:text-[20px]">Воскресенье: выходной</li>
-                  </ul>
+                {SalesOfficeArr?.slice(0, 1).map((item, index) => (
+                  <div className="contacts__date mt-[50px] md:mt-[90px] text-center md:text-start">
+                    <h3 className="date__title text-[19px] md:text-[30px]">{item.name}</h3>
+                    <ul dangerouslySetInnerHTML={{ __html: item.description }}
+                      className="date__list mt-[10px] flex flex-col gap-[10px]">
+                    </ul>
+                  </div>
+                ))}
 
-                </div>
+
               </div>
               <div className="contacts__form   self-center mt-[50px] lg:mt-[0px] w-[370px] h-[418px] md:w-[552px] md:h-[525px]
                                 rounded-[30px] md:rounded-[35px] bg-[#00091b]  pt-[35px] md:pt-[41px] flex flex-col items-center">
@@ -122,28 +128,20 @@ export const Contacts = () => {
             </div>
             <div className="contacts__stores flex flex-col
                              gap-[50px] text-center mt-[50px]  md:text-start md:mt-[82px] md:flex-row md:justify-between">
-              <div className="store__content">
-                <h4 className="store__title">Офис продаж «Globus»:</h4>
-                <div className="store__list flex flex-col gap-[10px]">
-                  <p className="store__time mt-[30px] md:mt-[50px]">Пн – Пт: с 9:30 до 19:00</p>
-                  <p className="store__time">Суббота: с 10:30 до 16:00</p>
-                  <p className="store__time">Воскресенье: выходной</p></div>
-
-              </div>
-              <div className="store__content">
-                <h4 className="store__title">Офис продаж «Елисейские Поля»:</h4>
-                <div className="store__list flex flex-col gap-[10px]">
-                  <p className="store__time mt-[30px] md:mt-[50px]">Пн – Пт: с 9:30 до 18:00</p>
-                  <p className="store__time">Суббота: с 10:30 до 16:00</p>
-                  <p className="store__time">Воскресенье: выходной</p>
+              {SalesOfficeArr?.slice(1, 3).map((item, index) => (
+                <div className="contacts__date mt-[50px] md:mt-[90px] text-center md:text-start">
+                  <h3 className="date__title text-[19px] md:text-[30px]">{item.name}</h3>
+                  <ul dangerouslySetInnerHTML={{ __html: item.description }}
+                    className="date__list mt-[10px] flex flex-col gap-[10px]">
+                  </ul>
                 </div>
-              </div>
+              ))}
             </div>
             <div className="contacts__social__media flex  gap-[15px] lg:gap-[50px] xl:gap-[83px] justify-center mt-[50px] md:mt-[90px]">
-              {social.map((item) => (
-                <a href={item.link} className="social__links">
+              {SocialMedia?.map((item) => (
+                <a href={item.link} className={`${item.title}`}>
                   <img key={item.id}
-                    src={item.icon}
+                    src={item.svg}
                     className="lg:w-[76px] lg:h-[76px]"
                   ></img>
                 </a>
@@ -153,69 +151,38 @@ export const Contacts = () => {
                             text-center lg:text-start">
               <h5 className="banking__title text-[19px] md:text-[30px]">Наши реквизиты:</h5>
               <div className="banking__list flex flex-col gap-[10px] mt-[30px] lg:mt-[50px]">
-                <p>ОсОО «Строительная компания «Авангард стиль»</p>
-                <p>ИНН: 00412199810063</p>
-                <p>999 УГКНС ККН</p>
-                <p>ОКПО:22116708</p></div>
+                <p>{ContactsData.currentData?.title}</p>
+                <p>ИНН: {ContactsData.currentData?.inn}</p>
+                <p>ОКПО:{ContactsData.currentData?.okpo}</p></div>
 
             </div>
 
           </div>
+
           <div className="contacts__check mt-[50px] md:mt-[90px]">
             <h5 className="check__title  text-center md:text-start text-[19px] md:text-[30px]">Реквизиты для входящих денежных переводов в кыргызский сомах</h5>
-            <div className="check__list mt-[30px] md:mt-[50px] grid gap-y-4">
-              {[
-                { label: "Получатель:", value: "Строительная компания Авангард Стиль ОСОО" },
-                { label: "Счет получателя:", value: "1180000031018685" },
-                { label: "БИК Банка получателя:", value: "118006" },
-                { label: "Банк получателя:", value: "Филиал «ДКИБ – М.Горький» ЗАО«Демир Кыргыз Интернэшнл Банк»" },
-              ].map((item, index) => (
+            {SomReq?.map((item, index) => (
+              <div className="check__list mt-[30px] md:mt-[50px] grid gap-y-4">
                 <div key={index} className="grid grid-cols-2 gap-x-8">
-                  <div>{item.label}</div>
-                  <div>{item.value}</div>
+                  <div>{item.title}</div>
+                  <div dangerouslySetInnerHTML={{__html: item.description}}
+                  ></div>
                 </div>
-              ))}
-            </div>
-
+              </div>
+            ))}
           </div>
           <div className="contacts__transfer mt-[50px] md:mt-[90px]">
             <h6 className="transfer__title text-[19px] md:text-[30px]">Реквизиты для входящих денежных
               переводов в USD</h6>
             <div className="transfer__wrapper  flex flex-col  mt-[30px] md:mt-[50px] text-[15px] md:text-[20px]">
               <div className="transfer__orderAndinfo grid gap-y-4">
-                {[
-                  { label: "Beneficiary / Получатель:", value: "SC AVANGARD STIL LLC" },
-                  { label: "Beneficiary account / Счет получателя:", value: "1180000031018584 USD" },
-                  { label: "Beneficiary bank / Банк получателя:", value: "Demir Kyrgyz International Bank (Bishkek, Kyrgyzstan)" },
-                  { label: "Beneficiary bank address / Адрес банка:", value: "245, Chui Ave., Bishkek, Kyrgyzstan / Кыргызстан, г. Бишкек, пр. Чуй 245" },
-                  { label: "Beneficiary bank swift (BIC) / Swift банка:", value: "DEMIKG22" }
-                ].map((item, index) => (
+              {DollarReq?.map((item, index) => (
                   <div key={index} className="grid grid-cols-2 gap-x-8">
-                    <div>{item.label}</div>
-                    <div>{item.value}</div>
+                    <div>{item.title}</div>
+                    <div dangerouslySetInnerHTML={{__html: item.description}}
+                    ></div>
                   </div>
                 ))}
-              </div>
-              <div className="tranfer__details mt-[35px] grid grid-cols-2 gap-[35px] ">
-                <p className="detail__dollars">Correspondent bank for USD transfers / Банк
-                  корреспондент для переводов в долларах</p>
-                <ul className="data__details-list  flex flex-col gap-[25px]">
-                  <li className="details__item">
-                    KOOKMIN BANK (Seoul, South Korea)SWIFT BIC: CZNBKRSEAddress: Kookmin Bank H.Q, Sewoo Building, 115 Yeouigongwon-ro, Yeongdeungpo-gu, Seoul (Zip : 07241)
-                  </li>
-                  <li className="data__bank-details">Correspondent account of DemirBank: 8D2-8-USD-01-8</li>
-                  <li className="details__item">
-                    INTERMEDIARY BANKS:
-                  </li>
-                  <li className="details__item">1&#41;
-                    JPMORGAN CHASE BANKSWIFT BIC: CHASUS33 Account#: 001 1 544111</li>
-                  <li className="details__item">2&#41;
-                    CITIBANKSWIFT BIC: CITIUS33 Account#: 36049172</li>
-                  <li className="details__item">
-                    3&#41; BANK OF AMERICA YORKSWIFT BIC: BOFAUS3N Account#: 6550694497</li>
-                  <li className="details__item">
-                    4&#41; THE BANK OF NEW MELLONSWIFT BIC: IRVTUS3N Account#: 8033256958</li>
-                </ul>
               </div>
             </div>
           </div>
