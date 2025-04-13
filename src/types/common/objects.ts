@@ -41,17 +41,7 @@ export interface InterestNearby {
   interest_nearby: InterestNearbyBuilding[];
 }
 
-export interface ArchitectureFeature {
-  id: number;
-  title: string;
-  features: {
-    Architecture: string;
-    id: string;
-    mini_description: string;
-    title: string;
-  }[];
-  image: string;
-}
+
 
 // Основные секции
 export interface Complex {
@@ -106,11 +96,26 @@ export interface ParkingPlan {
   building: number;
 }
 
-export interface Architecture {
+// For individual feature items
+export interface ArchitectureFeature {
+  Architecture: number;
   id: number;
-  architecture: ArchitectureFeature[];
-  building: number;
+  mini_description: string;
+  title: string;
 }
+
+// For each architecture section (Materials/Facade)
+export interface ArchitectureItem {
+  id: number;
+  features: ArchitectureFeature[];
+  image: string;
+  section6: number;
+  title: string;
+}
+
+// For the entire array you receive as props
+export type ArchitectureData = ArchitectureItem[];
+
 
 export interface Gallery {
   id: number;
@@ -154,7 +159,7 @@ export interface AvangardComplexData {
   before_after: BeforeAfter;
   floor_plans: FloorPlans;
   parking_plan: ParkingPlan;
-  architecture: Architecture;
+  architecture: ArchitectureItem;
   bitrix: string;
   gallery: Gallery;
   advantages: Advantages;

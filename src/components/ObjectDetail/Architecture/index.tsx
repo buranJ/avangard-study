@@ -1,27 +1,16 @@
 import { FC, useEffect, useMemo, useRef, useState } from 'react';
 
-import type { Architecture } from 'types/common';
-import SegmentedControl from 'components/Segment';
+import type { ArchitectureData } from 'types/common/objects';
+interface IProps {
+  architectureData: ArchitectureData; 
+}
 
+
+  
+ 
 import './styles.scss';
-
-type IProps = Architecture;
-
-import circle from '../../../assets/images/arch__circle.svg'
 import line from '../../../assets/images/arch__little-line.svg'
 
-type Feature = {
-  id: number,
-  title: string,
-  description: string,
-
-}
-type Marerials = {
-  id: number,
-  title: string,
-  description: string,
-
-}
 
 type ChosenArr = {
   id: number,
@@ -30,67 +19,72 @@ type ChosenArr = {
 }
 
 
-const features: Feature[] = [
-  {
-    id: 1,
-    title: "Конструкция из монолитного железобетона",
-    description: "Характеристики повышенной устойчивости и длительным сроком службы"
-  },
-  {
-    id: 2,
-    title: "Вентфасад",
-    description: "Фасад с воздушным зазором между облицовкой и стеной"
-  },
-  {
-    id: 3,
-    title: "Теплоизоляция из минплит",
-    description: "Утеплитель приспособлен к непостоянному климату"
-  },
-  {
-    id: 4,
-    title: "Фасад — натуральный камень «Сары-Таш»",
-    description: "Высокая прочность, устойчивость к агрессивным воздействиям"
-  },
-  {
-    id: 5,
-    title: "Высокие потолки высотой 3,2 метра",
-    description: "Создают ощущение простора и роскоши в помещении"
-  },
+// const features: Feature[] = [
+//   {
+//     id: 1,
+//     title: "Конструкция из монолитного железобетона",
+//     description: "Характеристики повышенной устойчивости и длительным сроком службы"
+//   },
+//   {
+//     id: 2,
+//     title: "Вентфасад",
+//     description: "Фасад с воздушным зазором между облицовкой и стеной"
+//   },
+//   {
+//     id: 3,
+//     title: "Теплоизоляция из минплит",
+//     description: "Утеплитель приспособлен к непостоянному климату"
+//   },
+//   {
+//     id: 4,
+//     title: "Фасад — натуральный камень «Сары-Таш»",
+//     description: "Высокая прочность, устойчивость к агрессивным воздействиям"
+//   },
+//   {
+//     id: 5,
+//     title: "Высокие потолки высотой 3,2 метра",
+//     description: "Создают ощущение простора и роскоши в помещении"
+//   },
 
-];
+// ];
 
-const materials: Marerials[] = [
-  {
-    id: 1,
-    title: "Металлический каркас",
-    description: "Обеспечивает жёсткость конструкции и долговечность всего здания"
-  },
-  {
-    id: 2,
-    title: "Тёплый керамический блок",
-    description: "Обладает хорошими теплоизоляционными свойствами и устойчив к внешним воздействиям"
-  },
-  {
-    id: 3,
-    title: "Кирпичная кладка",
-    description: "Классическое решение с высокой надёжностью и длительным сроком службы"
-  },
-  {
-    id: 4,
-    title: "Гидроизоляционная мембрана",
-    description: "Защищает строительные конструкции от влаги и продлевает срок эксплуатации"
-  },
-  {
-    id: 5,
-    title: "Кровельное покрытие из металлочерепицы",
-    description: "Обеспечивает надёжную защиту крыши и устойчиво к погодным условиям"
-  }
-];
+// const materials: Materials[] = [
+//   {
+//     id: 1,
+//     title: "Металлический каркас",
+//     description: "Обеспечивает жёсткость конструкции и долговечность всего здания"
+//   },
+//   {
+//     id: 2,
+//     title: "Тёплый керамический блок",
+//     description: "Обладает хорошими теплоизоляционными свойствами и устойчив к внешним воздействиям"
+//   },
+//   {
+//     id: 3,
+//     title: "Кирпичная кладка",
+//     description: "Классическое решение с высокой надёжностью и длительным сроком службы"
+//   },
+//   {
+//     id: 4,
+//     title: "Гидроизоляционная мембрана",
+//     description: "Защищает строительные конструкции от влаги и продлевает срок эксплуатации"
+//   },
+//   {
+//     id: 5,
+//     title: "Кровельное покрытие из металлочерепицы",
+//     description: "Обеспечивает надёжную защиту крыши и устойчиво к погодным условиям"
+//   }
+// ];
 
 
 
-const Architecture: FC<IProps> = ({ architecture }) => {
-
+const Architecture: FC<IProps> = ({ architectureData  }) => {
+  // console.log(architectureData)
+  // const Materials = architectureData[0]; // ← Now this works
+  // const Facade = architectureData[1]
+  // console.log(Materials)
+  // console.log(Facade)
+  
   const [isMobile, setIsMobile] = useState(false);
   const [isButtonChoice, setButtonChoice] = useState<string>('facade');
 
@@ -103,7 +97,7 @@ const Architecture: FC<IProps> = ({ architecture }) => {
 
 
 
-  const ChosenArr: ChosenArr[] = isButtonChoice === "facade" ? features : materials
+//   const ChosenArr: ChosenArr[] = isButtonChoice === "facade" ? architectureData.architecture[0].features : architectureData.architecture[1].features
 
 
 
@@ -122,7 +116,7 @@ const Architecture: FC<IProps> = ({ architecture }) => {
               className={`arch__btn-material  rounded-[31px] h-[50px]  md:h-[63px] w-[194px] md:w-[291px] border-none  text-center  ${isButtonChoice === "material" ? "bg-[#00417d] text-white" : "bg-transparent text-[#00417d]"}`}>Материалы</button>
           </div>
           <div className="arch__information-content">
-            {isMobile && (
+            {/* {isMobile && (
               <div className="arch-data__side relative flex flex-col gap-[50px]">
                 {ChosenArr.map((item, index) => (
                   <div key={item.id}
@@ -140,7 +134,7 @@ const Architecture: FC<IProps> = ({ architecture }) => {
                     </div>
                     <div className="element__text">
                       <h4 className="element__title text-[19px]">{item.title}</h4>
-                      <p className="element__des text-[15px]">{item.description}</p>
+                      <p className="element__des text-[15px]">{item.mini_description}</p>
                     </div>
                   </div>
                 ))}
@@ -156,7 +150,7 @@ const Architecture: FC<IProps> = ({ architecture }) => {
                       <div key={index} className="desktop__container">
                         <div className="desktop__wrapper flex flex-col items-center gap-[10px] text-center max-w-[315px]">
                           <h4 className="desktop__title text-[30px]">{item.title}</h4>
-                          <p className="desktop__des text-[20px]">{item.description}</p>
+                          <p className="desktop__des text-[20px]">{item.mini_description}</p>
                           <img src={line} alt="desktop__line" />
                         </div>
                       </div>
@@ -171,7 +165,7 @@ const Architecture: FC<IProps> = ({ architecture }) => {
                         <div className="desktop__wrapper flex flex-col gap-[10px] items-center text-center max-w-[315px]">
                           <img src={line} alt="desktop__line" />
                           <h4 className="desktop__title text-[30px]">{item.title}</h4>
-                          <p className="desktop__des text-[20px]">{item.description}</p>
+                          <p className="desktop__des text-[20px]">{item.mini_description}</p>
                         </div>
                       </div>
                     )
@@ -179,7 +173,7 @@ const Architecture: FC<IProps> = ({ architecture }) => {
                 </div>
 
               </div>
-            )}
+            )} */}
 
           </div>
         </div>

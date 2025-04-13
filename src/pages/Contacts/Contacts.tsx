@@ -56,7 +56,7 @@ export const Contacts = () => {
   }
 
   return (
-    <section className="contacts p-[0px] m-[0px]">
+    <section className="contacts p-[0px] m-[50px]">
       <div className="container">
         <div className="contacts__content pt-[52px] md:pt-[70px] pb-[50px] md:pb-[90px] font-normal text-[#00091b]">
           <h2 className="contacts__title text-center text-[24px] md:text-[50px]">Контакты</h2>

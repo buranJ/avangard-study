@@ -7,7 +7,7 @@ interface LocationProps {
   description: string;
 }
 
-const Location: React.FC<LocationProps> = (mapUrl,description) => {
+const Location: React.FC<LocationProps> = (location) => {
     const [isMobile,setIsMobile]=useState(window.innerWidth<=750)
 
     useEffect(()=>{
@@ -32,12 +32,12 @@ const Location: React.FC<LocationProps> = (mapUrl,description) => {
         height: isMobile ? "292px" : "515px", 
         transition: "all 0.3s ease-in-out", 
       }}
-          src="https://yandex.com/map-widget/v1/?um=constructor%3A662616f57661b10a818ef8d517020ecdfc0464274f2df78f59f7465e942442fd&amp;source=constructor"></iframe>
+          src={location.mapUrl}></iframe>
           </div>
           <div className="location__information mt-[15px] lg:mt-[107px] flex flex-col gap-[70px]">
           <h2 className="location__title text-[50px] text-[#00091b] hidden lg:flex">Локация</h2>
           <div className="location__des md:pb-[50px] text-[15px] text-[rgba(0, 9, 27, 0.7)] md:text-[25px] max-w-[503px]">
-          Благодаря продуманной инфраструктуре, вы будете наслаждаться комфортом вдали от городской суеты, вдыхая чистый горный воздух
+       {location.description}
           </div>
           </div> 
         </div>

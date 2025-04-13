@@ -14,6 +14,8 @@ import { sendForm } from 'emailjs-com';
 
 
 const VacanciesPage = () => {
+    const VacancyData=useGetVacancyQuery()
+    console.log(VacancyData)
     const [isTyping, setTyping] = useState<boolean>(false)
     const [isFile, setFile] = useState<File | null>(null);
 
@@ -33,7 +35,7 @@ const VacanciesPage = () => {
     return (
         <section className="Vacancies">
             <div className="container">
-                <div className="Vacancies__content flex flex-col justify-center">
+                <div className="Vacancies__content mt-[150px] flex flex-col justify-center">
                     <div className="Vacancies__heading flex items-center justify-between w-full">
                             <img src={arrowVac} alt="arrow" />
                         <h1 className="Vacancies__title text-[24px] md:text-[36px] mx-auto">Вакансии</h1>
@@ -85,7 +87,7 @@ const VacanciesPage = () => {
                     </div>
                     <div className="Vacancies__contacts flex flex-col text-center md:flex  mt-[40px] gap-[7px] justify-center text-[18px]">
                         <p className="contacts__text">По всем вопросам обращайтесь в отдел кадров</p>
-                        <a href="+996 706 156 166" className="contacts__tel text-[#06c] font-semibold">+996 706 156 166</a>
+                        <a href="+996 706 156 166" className="contacts__tel text-[#06c] font-semibold">{VacancyData.currentData?.phone}</a>
                     </div>
 
 
