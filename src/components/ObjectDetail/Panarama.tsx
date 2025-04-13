@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useGetObjectQuery } from 'api/objects/objects.api';
 import Hero from 'components/Hero'
 
-// import AnimatedSVG from '../../Users/Animation'
 import Gallery from '../Gallery'
 import Logo from '../../Users/Animation'
 import AboutObject from './AboutObject'
@@ -36,11 +35,10 @@ function Panarama() {
             <Architecture />
             <MasterPlan gen_plan={objectQuery?.numeration} image ={objectQuery?.numeration?.image}/>
             <Gallery imgsSrc={objectQuery?.gallery?.images}/>
-            <Location />
+            <Location mapUrl={objectQuery?.location.location_iframe_url} description={objectQuery?.location.location_description} />
             {/* <WhatInteresting /> */}
             <MapImages />
             <Features />
-            <VacanciesPage/>
             <SupBottom />
         </>
     )
