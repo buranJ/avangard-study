@@ -15,26 +15,27 @@ import ObjectMetrics from './ObjectMetrics'
 
 import Features from './Features'
 import Architecture from './Architecture'
-  
+
 import SupBottom from './SupBottom'
 import VacanciesPage from 'components/Vacancies'
 
 function Panarama() {
     const { slug } = useParams();
     const { data: objectQuery, isLoading, isError } = useGetObjectQuery({ slug: 'panoramapark' as string });
+    const [activeImg, setActiveImg] = useState<string>("")
 
     return (
         <>
-            <Logo/>
-            
+            <Logo />
+
             <Hero />
-            <AboutObject Data = {objectQuery?.about_complex} />
+            <AboutObject Data={objectQuery?.about_complex} />
             <ObjectMetrics />
-            <BeforeAfter /> 
+            <BeforeAfter />
             <FloorPlans />
             <Architecture />
-            <MasterPlan gen_plan={objectQuery?.numeration} image ={objectQuery?.numeration?.image}/>
-            <Gallery imgsSrc={objectQuery?.gallery?.images}/>
+            <MasterPlan gen_plan={objectQuery?.numeration} image={objectQuery?.numeration?.image} />
+            <Gallery imgsSrc={objectQuery?.gallery?.images} activeImg={activeImg} setActiveImg={setActiveImg} /> {/*не трогать*/}
             <Location mapUrl={objectQuery?.location.location_iframe_url} description={objectQuery?.location.location_description} />
             {/* <WhatInteresting /> */}
             <MapImages />
