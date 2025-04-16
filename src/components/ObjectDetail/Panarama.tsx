@@ -1,23 +1,22 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
+
 import { useGetObjectQuery } from 'api/objects/objects.api';
 import Hero from 'components/Hero'
+import VacanciesPage from 'components/Vacancies'
 
-import Gallery from '../Gallery'
 import Logo from '../../Users/Animation'
+import Gallery from '../Gallery'
 import AboutObject from './AboutObject'
+import Architecture from './Architecture'
 import BeforeAfter from './BeforeAfter'
+import Features from './Features'
 import FloorPlans from './FloorPlans'
 import Location from './Location'
 import MapImages from './MapImages'
 import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
-
-import Features from './Features'
-import Architecture from './Architecture'
-
 import SupBottom from './SupBottom'
-import VacanciesPage from 'components/Vacancies'
 
 function Panarama() {
     const { slug } = useParams();
@@ -38,7 +37,7 @@ function Panarama() {
             <Gallery imgsSrc={objectQuery?.gallery?.images} activeImg={activeImg} setActiveImg={setActiveImg} /> {/*не трогать*/}
             <Location mapUrl={objectQuery?.location.location_iframe_url} description={objectQuery?.location.location_description} />
             {/* <WhatInteresting /> */}
-            <MapImages />
+            <MapImages images={[objectQuery?.location?.location_image_first, objectQuery?.location?.location_image_second]} />
             <Features />
             <SupBottom />
         </>

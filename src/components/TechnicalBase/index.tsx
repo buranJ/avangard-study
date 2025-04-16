@@ -1,11 +1,14 @@
+import { useState } from 'react';
+
 import { useGetTechnicalBaseQuery } from 'api/contact/contact.api';
 import Gallery from 'components/Gallery';
+import Item from 'components/Home/OngoingProjects/Item';
 import Mansory from 'components/Masonry';
 import PageHeading from 'components/PageHeading';
+
 import mockTechnicalBase from "./mocType"
+
 import './styles.scss';
-import Item from 'components/Home/OngoingProjects/Item';
-import { useState } from 'react';
 
 const TechnicalBasePage = () => {
   const { data } = useGetTechnicalBaseQuery()

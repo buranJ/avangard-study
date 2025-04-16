@@ -1,5 +1,6 @@
 // import loaderIcon from 'assets/icons/loader.svg';
 import { act, FC, useState } from 'react';
+
 import './style.scss';
 import "yet-another-react-lightbox/styles.css";
 
@@ -27,7 +28,7 @@ interface IProps {
   activeImg: string;
 }
 const Gallery: FC<IProps> = ({ imgsSrc, setActiveImg, activeImg }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  // const [isOpen, setIsOpen] = useState(false)
   return (
     <>
       <Lightbox
