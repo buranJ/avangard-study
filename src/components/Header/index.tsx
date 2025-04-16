@@ -47,7 +47,7 @@ const Header: FC<IProps> = ({ menuData, consultationNumber }) => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-lg shadow-lg z-50 pb-[20px]">
+    <header className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-lg shadow-lg z-20 pb-[20px]">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mt-4">
           <Link to={"/"} >

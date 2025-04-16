@@ -21,7 +21,7 @@ const OngoingProjects = () => {
             <img src={blackArrow} alt="vector" />
           </div>
           <div className="OnProjects__item-container mx-auto grid  xl:grid-cols-3 gap-[39px] relative">
-            {data.map((item, index) => (
+            {data?.map((item, index) => (
               <div key={index}
                 className="OnProject__item mt-[50px] md:mt-[30px] flex flex-col items-center rounded-[28px] px-[10px] bg-white w-[350px] h-[385px]">
                <div className="OnProject__img-wrapper relative">
