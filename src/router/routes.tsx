@@ -20,6 +20,7 @@ import NewsCard from "components/NewsCard/index.tsx"
 
 import DefaultLayout from '../layouts/DefaultLayout';
 import ObjectDetailLayout from '../layouts/ObjectDetailLayout';
+import BuisnessCenter from 'pages/BuisnessCenter/BuisnessCenter';
 
 const AppRoutes = () => {
   return (
@@ -32,6 +33,7 @@ const AppRoutes = () => {
         <Route path='/news' element={<News />} />
         <Route path="/newscard" element={<NewsCard />} />
         <Route path='/technical-base' element={<TechnicalBase />} />
+        <Route path='/buisness-center' element={<BuisnessCenter />} />
         <Route path='/smi' element={<Smi />} />
         <Route path="/procurement" element={<TenderPage />} />
         <Route path="/procurement/:id" element={<TenderDetail />} />

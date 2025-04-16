@@ -16,6 +16,10 @@ import Location from './Location'
 import MapImages from './MapImages'
 import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
+
+import Features from './Features'
+import Architecture from './Architecture'
+import WhatInteresting from './WhatInteresting';
 import SupBottom from './SupBottom'
 
 function Panarama() {
@@ -29,7 +33,7 @@ function Panarama() {
 
             <Hero />
             <AboutObject Data={objectQuery?.about_complex} />
-            <ObjectMetrics />
+            <ObjectMetrics  metrics={objectQuery?.object_metrics} title={objectQuery?.object_metrics}/>
             <BeforeAfter />
             <FloorPlans />
             <Architecture />

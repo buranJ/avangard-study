@@ -53,7 +53,7 @@ function App() {
       <ScrollToTop />
       {/* <ApartmentInfo/> */}
       <AppWithLoading />
-
+      {/* <BuisnessCenter /> */}
       {/* <Test/> */}
       <WhatsAppWidget phoneNumber='+996997007007' message='Здравствуйте!' />
     </BrowserRouter>
