@@ -43,7 +43,7 @@ const Gallery: FC<IProps> = ({ imgsSrc, setActiveImg, activeImg }) => {
           <div className="galerey__content">
             <h2 className='text-black text-[28px] text-center font-bold md:text-[50px]'>Общий вид зданий</h2>
             <p className='text-[#00091B] text-[18px] text-center md:text-[25px]'>Нажмите для увеличения</p>
-            <div className="galerey__body mt-[134px]  flex flex-wrap justify-center items-start gap-2 gap-y-[12px] md:mt-[134px]">
+            <div className="galerey__body mt-[134px] flex flex-wrap justify-center items-start gap-2 gap-y-[12px] md:mt-[134px]">
               {imgsSrc?.map((src, index) => {
                 const { width, height } =
                   index < 5 ? fixedSizes[index] : fixedSizes[index % 5];
@@ -56,7 +56,7 @@ const Gallery: FC<IProps> = ({ imgsSrc, setActiveImg, activeImg }) => {
                       alt={`Tech ${index + 1}`}
                       width={width}
                       height={height}
-                      className={` border cursor-pointer border-rounded-[27px] ${[5].includes(index) ? "md:mt-[-90px]" : "md:mt-[-90px]"}${[2].includes(index) ? "md:mt-[90px]" : ""} ${[12, 7].includes(index) ? "md:mt-[0px]" : ""}`}
+                      className={`border w-full h-full object-cover cursor-pointer border-rounded-[27px] ${[5].includes(index) ? " md:mt-[-90px]" : "md:mt-[-90px]"}${[2].includes(index) ? "md:mt-[90px]" : ""} ${[12, 7].includes(index) ? "md:mt-[0px]" : ""}`}
                       style={{ width: `${width}px`, height: `${height}px`, borderRadius: "27px" }}
                     />
                   </div>

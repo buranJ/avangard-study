@@ -7,6 +7,7 @@ import VacanciesPage from 'components/Vacancies'
 
 import Logo from '../../Users/Animation'
 import Gallery from '../Gallery'
+// import Logo from '../../Users/Animation'
 import AboutObject from './AboutObject'
 import Architecture from './Architecture'
 import BeforeAfter from './BeforeAfter'
@@ -17,9 +18,7 @@ import MapImages from './MapImages'
 import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
 
-import Features from './Features'
-import Architecture from './Architecture'
-import WhatInteresting from './WhatInteresting';
+// import WhatInteresting from './WhatInteresting';
 import SupBottom from './SupBottom'
 
 function Panarama() {
@@ -29,7 +28,9 @@ function Panarama() {
 
     return (
         <>
-            <Logo />
+            <Logo/>
+            
+    
 
             <Hero />
             <AboutObject Data={objectQuery?.about_complex} />

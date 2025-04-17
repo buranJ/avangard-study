@@ -1,6 +1,5 @@
-import React from 'react';
-import { useState,useEffect } from 'react';
-import './index.css';
+import React, { useEffect, useState } from 'react';
+import'./index.css'
 
 const Logo = () => {
   const [isVisible, setIsVisible] = useState(true);
