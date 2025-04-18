@@ -18,8 +18,9 @@ import MapImages from './MapImages'
 import MasterPlan from './MasterPlan'
 import ObjectMetrics from './ObjectMetrics'
 
-// import WhatInteresting from './WhatInteresting';
+import WhatInteresting from './WhatInteresting';
 import SupBottom from './SupBottom'
+import BuisnessCenter from 'pages/BuisnessCenter/BuisnessCenter';
 
 function Panarama() {
     const { slug } = useParams();
@@ -28,9 +29,9 @@ function Panarama() {
 
     return (
         <>
-            <Logo/>
-            
-    
+            <Logo />
+
+
 
             <Hero />
             <AboutObject Data={objectQuery?.about_complex} />
@@ -41,10 +42,11 @@ function Panarama() {
             <MasterPlan gen_plan={objectQuery?.numeration} image={objectQuery?.numeration?.image} />
             <Gallery imgsSrc={objectQuery?.gallery?.images} activeImg={activeImg} setActiveImg={setActiveImg} /> {/*не трогать*/}
             <Location mapUrl={objectQuery?.location.location_iframe_url} description={objectQuery?.location.location_description} />
-            {/* <WhatInteresting /> */}
+            <WhatInteresting data={objectQuery?.interest_nearby} />
             <MapImages images={[objectQuery?.location?.location_image_first, objectQuery?.location?.location_image_second]} />
             <Features />
             <SupBottom />
+            {/* <BuisnessCenter /> */}
         </>
     )
 }

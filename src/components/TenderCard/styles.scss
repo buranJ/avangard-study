@@ -1,34 +1,38 @@
 .tender-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
     &:hover {
-        .tender-card__img img {
-            @apply scale-105;
-        }
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  
+      .tender-card__title {
+        color: #1e90ff;
+      }
     }
-
-    &__img {
-        @apply relative;
-
-        &::after {
-            content: '';
-            @apply absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none;
-        }
-
-        img {
-            @apply transition-transform duration-300 ease-in-out;
-        }
+  
+    &__content {
+      padding: 30px;
     }
-
-    &__info {
-        h3 {
-            @apply overflow-hidden line-clamp-2;
-        }
+  
+    &__title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #222;
+      transition: color 0.6s ease;
+  
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* ограничиваем до двух строк */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-}
-
-.pill {
-    @apply inline-flex items-center justify-center transition-all duration-200 ease-in-out;
-
-    &:hover {
-        @apply bg-gray-200;
-    }
-}
+  }
+  
