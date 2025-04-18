@@ -1,31 +1,42 @@
-import { FC, useCallback, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { FC, useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { useGetConstructionProgressQuery } from 'api/objects/objects.api';
-import { Footer } from 'types/common';
-import Button from 'components/Button';
-import CalendarAccordion from 'components/CalendarAccordion';
-import { Modal } from 'components/Modal';
+import { useGetConstructionProgressQuery } from "api/objects/objects.api";
+import { Footer } from "types/common";
+import Button from "components/Button";
+import CalendarAccordion from "components/CalendarAccordion";
+import { Modal } from "components/Modal";
 
 // import x from "../../../assets/images/BeforeAfter/krestik.svg";
 import BtnsModal from "./BtnsModal";
 
 import "./style.scss";
-import './style.scss';
+import "./style.scss";
 
-import { Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { PaginationOptions } from 'swiper/types';
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { PaginationOptions } from "swiper/types";
 
 const SupBottom: FC<Footer> = ({ youtube_url, building }) => {
   const [open, setOpen] = useState(false);
+  const { data } = useGetConstructionProgressQuery({building_id: "1" });
+  console.log(data);
 
   return (
     <section className="SupBottom">
       <div className="container">
         <div className="SupBottom__content">
           <div className="SupBottom__video rounded-[29px] w-[1128px] h-[632px]">
-            <iframe width="560" height="315" src={youtube_url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src={youtube_url}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
           {open && (
             <div className="BtnsModal__out">
@@ -39,11 +50,13 @@ const SupBottom: FC<Footer> = ({ youtube_url, building }) => {
                     onClick={() => setOpen(false)}
                   />
                 </button>
-                <BtnsModal />
+                <BtnsModal info={data} />
               </div>
             </div>
           )}
-          {open ? document.body.classList.add("overflow-hidden") : document.body.classList.remove("overflow-hidden")}
+          {open
+            ? document.body.classList.add("overflow-hidden")
+            : document.body.classList.remove("overflow-hidden")}
           <div className="objectBtns__content">
             <div className="objectBtns__top">
               <h3 className="objectBtns__top-title">Прямой эфир</h3>
@@ -76,4 +89,3 @@ const SupBottom: FC<Footer> = ({ youtube_url, building }) => {
 };
 
 export default SupBottom;
-

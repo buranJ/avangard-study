@@ -19,7 +19,7 @@
 }
 
 .BtnsModal__top {
-    @apply min-h-[236px] max-h-[458px] w-full xl:h-full;
+    @apply min-h-[236px] xl:max-h-[458px] w-full xl:h-full;
 }
 
 .BtnsModal__top img {
@@ -61,7 +61,7 @@
 }
 
 .BtnsModal__form-btn {
-    @apply py-[20px] px-[15px] rounded-[15px] bg-[#00091b];
+    @apply py-[20px] px-[15px] rounded-[15px] bg-transparent rotate-270 cursor-pointer;
 }
 
 .BtnsModal__form-label {
