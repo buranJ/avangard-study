@@ -99,13 +99,25 @@ export interface ParkingPlan {
 
 
 export interface ArchitectureItem {
-    Architecture: number;
-    id: number;
-    mini_description: string;
-    title: string;
-}[]
+  Architecture: number;
+  id: number;
+  mini_description: string;
+  title: string;
+}
 
+export interface ArchitectureBlock {
+  id: number;
+  title: string;
+  image: string;
+  section6: number;
+  features: ArchitectureItem[];
+}
 
+export interface ArchitectureData {
+  id: number;
+  building: number;
+  architecture: ArchitectureBlock[];
+}
 
 
 

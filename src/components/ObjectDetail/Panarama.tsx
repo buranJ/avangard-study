@@ -23,7 +23,7 @@ import SupBottom from './SupBottom'
 function Panarama() {
     const { slug } = useParams();
     const { data: objectQuery, isLoading, isError } = useGetObjectQuery({ slug: 'panoramapark' as string });
-
+    console.log(objectQuery?.architecture)
     return (
         <>
             <Logo />
@@ -32,15 +32,20 @@ function Panarama() {
             <ObjectMetrics />
             <BeforeAfter />
             <FloorPlans />
-            <Architecture    materials={objectQuery?.architecture.architecture[0].features}
-                facades={objectQuery?.architecture.architecture[1].features} />
+            {objectQuery?.architecture?.architecture?.[0]?.features &&
+                objectQuery?.architecture?.architecture?.[1]?.features && (
+                    <Architecture
+                        materials={objectQuery.architecture.architecture[0].features}
+                        facades={objectQuery.architecture.architecture[1].features}
+                    />
+                )}
             <MasterPlan gen_plan={objectQuery?.numeration} image={objectQuery?.numeration?.image} />
             {/* <Gallery imgsSrc={objectQuery?.gallery?.images} activeImg={activeImg} setActiveImg={setActiveImg} /> не трогать */}
             <Location mapUrl={objectQuery?.location.location_iframe_url} description={objectQuery?.location.location_description} />
             {/* <WhatInteresting /> */}
             <MapImages />
             <Features />
-            <SupBottom />
+            {/* <SupBottom /> */}
             {/* <BuisnessCenter /> */}
         </>
     )
