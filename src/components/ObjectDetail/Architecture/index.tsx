@@ -21,17 +21,16 @@ const Architecture: FC<IProps> = ({ materials, facades }) => {
   const [isButtonChoice, setButtonChoice] = useState<string>('facade');
 
   useEffect(() => {
-    const HandleResize = () => {
-      {
-        window.innerWidth < 1200 && (
-          setIsMobile(true)
-        )
-      }
-    }
-    window.addEventListener("resize", HandleResize)
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1200);
+    };
+  
+    handleResize();
+  
+    window.addEventListener("resize", handleResize)
 
     return () => {
-      window.removeEventListener("resize", HandleResize)
+      window.removeEventListener("resize",handleResize)
     }
 
   }, [])
