@@ -7,7 +7,7 @@ interface LocationProps {
   description: string;
 }
 
-const Location: React.FC<LocationProps> = (location) => {
+const Location: React.FC<LocationProps> = ({mapUrl,description}) => {
     const [isMobile,setIsMobile]=useState(window.innerWidth<=750)
 
     useEffect(()=>{
@@ -32,12 +32,12 @@ const Location: React.FC<LocationProps> = (location) => {
         height: isMobile ? "292px" : "515px", 
         transition: "all 0.3s ease-in-out", 
       }}
-          src={location.mapUrl}></iframe>
+          src={mapUrl}></iframe>
           </div>
           <div className="location__information mt-[15px] lg:mt-[107px] flex flex-col gap-[70px]">
           <h2 className="location__title text-[50px] text-[#00091b] hidden lg:flex">Локация</h2>
           <div className="location__des md:pb-[50px] text-[15px] text-[rgba(0, 9, 27, 0.7)] md:text-[25px] max-w-[503px]">
-       {location.description}
+       {description}
           </div>
           </div> 
         </div>

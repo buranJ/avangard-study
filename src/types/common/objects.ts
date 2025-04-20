@@ -96,25 +96,17 @@ export interface ParkingPlan {
   building: number;
 }
 
-// For individual feature items
-export interface ArchitectureFeature {
-  Architecture: number;
-  id: number;
-  mini_description: string;
-  title: string;
-}
 
-// For each architecture section (Materials/Facade)
+
 export interface ArchitectureItem {
-  id: number;
-  features: ArchitectureFeature[];
-  image: string;
-  section6: number;
-  title: string;
-}
+    Architecture: number;
+    id: number;
+    mini_description: string;
+    title: string;
+}[]
 
-// For the entire array you receive as props
-export type ArchitectureData = ArchitectureItem[];
+
+
 
 
 export interface Gallery {
