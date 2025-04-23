@@ -5,12 +5,13 @@ import { useGetObjectQuery } from 'api/objects/objects.api';
 import Hero from 'components/Hero'
 import VacanciesPage from 'components/Vacancies'
 
-import Logo from '../../Users/Animation'
+import Logo from '../../users/Animation'
 import Gallery from '../Gallery'
+// import Logo from '../../Users/Animation'
 // import Logo from '../../Users/Animation'
 import AboutObject from './AboutObject'
 import Architecture from './Architecture'
-import BeforeAfter from './BeforeAfter'
+// import BeforeAfter from './BeforeAfter'
 import Features from './Features'
 import FloorPlans from './FloorPlans'
 import Location from './Location'
@@ -26,11 +27,14 @@ function Panarama() {
     console.log(objectQuery?.architecture)
     return (
         <>
-            <Logo />
+            <Logo/>
+            
+    
+
             <Hero />
             <AboutObject Data={objectQuery?.about_complex} />
             <ObjectMetrics />
-            <BeforeAfter />
+            {/* <BeforeAfter /> */}
             <FloorPlans />
             {objectQuery?.architecture?.architecture?.[0]?.features &&
                 objectQuery?.architecture?.architecture?.[1]?.features && (
@@ -40,7 +44,7 @@ function Panarama() {
                     />
                 )}
             <MasterPlan gen_plan={objectQuery?.numeration} image={objectQuery?.numeration?.image} />
-            {/* <Gallery imgsSrc={objectQuery?.gallery?.images} activeImg={activeImg} setActiveImg={setActiveImg} /> не трогать */}
+            <Gallery imgsSrc={objectQuery?.gallery?.images}  />
             <Location mapUrl={objectQuery?.location.location_iframe_url} description={objectQuery?.location.location_description} />
             {/* <WhatInteresting /> */}
             <MapImages />
