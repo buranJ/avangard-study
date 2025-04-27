@@ -24,7 +24,7 @@ import SupBottom from './SupBottom'
 function Panarama() {
     const { slug } = useParams();
     const { data: objectQuery, isLoading, isError } = useGetObjectQuery({ slug: 'panoramapark' as string });
-    console.log(objectQuery?.architecture)
+
     return (
         <>
             <Logo/>
@@ -49,7 +49,7 @@ function Panarama() {
             {/* <WhatInteresting /> */}
             <MapImages />
             <Features />
-            {/* <SupBottom /> */}
+            <SupBottom youtube_url={objectQuery?.footer.youtube_url}/>
             {/* <BuisnessCenter /> */}
         </>
     )

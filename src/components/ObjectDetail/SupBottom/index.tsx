@@ -20,19 +20,16 @@ import { PaginationOptions } from "swiper/types";
 const SupBottom: FC<Footer> = ({ youtube_url, building }) => {
   const [open, setOpen] = useState(false);
   const { data } = useGetConstructionProgressQuery({building_id: "1" });
-  console.log(data);
+
 
   return (
     <section className="SupBottom">
       <div className="container">
         <div className="SupBottom__content">
-          <div className="SupBottom__video rounded-[29px] w-[1128px] h-[632px]">
-            <iframe
-              width="560"
-              height="315"
+          <div className="SupBottom__video mt-[100px]  mb-[90px] h-[320px] md:h-[500px] lg:h-[750px]">
+            <iframe className="rounded-[29px] w-full h-full"
               src={youtube_url}
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen

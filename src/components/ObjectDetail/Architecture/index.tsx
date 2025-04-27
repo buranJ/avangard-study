@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useRef, useState } from 'react';
+import { FC, useEffect,  useState } from 'react';
 
 import type { ArchitectureItem } from 'types/common/objects';
 
@@ -10,8 +10,6 @@ interface IProps {
 
 
 import './styles.scss';
-import line from '../../../assets/images/arch__little-line.svg'
-
 
 const Architecture: FC<IProps> = ({ materials, facades }) => {
   console.log(materials)
@@ -30,7 +28,7 @@ const Architecture: FC<IProps> = ({ materials, facades }) => {
     window.addEventListener("resize", handleResize)
 
     return () => {
-      window.removeEventListener("resize",handleResize)
+      window.removeEventListener("resize", handleResize)
     }
 
   }, [])
@@ -85,7 +83,7 @@ const Architecture: FC<IProps> = ({ materials, facades }) => {
                         <div className="desktop__wrapper flex flex-col items-center gap-[10px] text-center max-w-[315px]">
                           <h4 className="desktop__title text-[30px]">{item.title}</h4>
                           <p className="desktop__des text-[20px]">{item.mini_description}</p>
-                          <img src={line} alt="desktop__line" />
+                          <hr className='h-[70px] border-[#00417d] border-[2px] rounded-md mb-[2px]'></hr>
                         </div>
                       </div>
                     )
@@ -97,7 +95,7 @@ const Architecture: FC<IProps> = ({ materials, facades }) => {
                     index % 2 !== 0 && (
                       <div key={index} className="desktop__container">
                         <div className="desktop__wrapper flex flex-col gap-[10px] items-center text-center max-w-[315px]">
-                          <img src={line} alt="desktop__line" />
+                        <hr className='h-[70px] border-[#00417d] border-[2px] rounded-md mt-[2px]'></hr>
                           <h4 className="desktop__title text-[30px]">{item.title}</h4>
                           <p className="desktop__des text-[20px]">{item.mini_description}</p>
                         </div>
