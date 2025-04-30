@@ -12,8 +12,8 @@ interface IProps {
 import './styles.scss';
 
 const Architecture: FC<IProps> = ({ materials, facades }) => {
-  console.log(materials)
-  console.log(facades)
+  // console.log(materials)
+  // console.log(facades)
 
   const [isMobile, setIsMobile] = useState(false);
   const [isButtonChoice, setButtonChoice] = useState<string>('facade');
@@ -35,7 +35,7 @@ const Architecture: FC<IProps> = ({ materials, facades }) => {
 
 
   const ChosenArray: ArchitectureItem[] = isButtonChoice === "facade" ? facades : materials;
-  console.log(ChosenArray)
+  // console.log(ChosenArray)
 
   const toggleButton = (buttonName: string) => {
     setButtonChoice(buttonName)

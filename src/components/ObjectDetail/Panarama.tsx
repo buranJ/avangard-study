@@ -45,6 +45,7 @@ function Panarama() {
                 )}
             <MasterPlan gen_plan={objectQuery?.numeration} image={objectQuery?.numeration?.image} />
             <Gallery imgsSrc={objectQuery?.gallery?.images}  />
+            {/* <Gallery imgsSrc={objectQuery?.gallery?.images} activeImg={activeImg} setActiveImg={setActiveImg} />  */}
             <Location mapUrl={objectQuery?.location.location_iframe_url} description={objectQuery?.location.location_description} />
             {/* <WhatInteresting /> */}
             <MapImages />
